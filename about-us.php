@@ -19,7 +19,7 @@
         <div class="about_us_text">
             <p class="about_us_text_1">О НАС</p>
             <h2 class="h2">
-            Изучай и осваивай новую профессию вместе с нами
+            Изучай и осваивай новую профессию вместе с нами!
             </h2>
         </div>
         <div class="about_us_cart">
