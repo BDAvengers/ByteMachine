@@ -1,0 +1,1602 @@
+@media screen and (max-width:1200px) {
+    .nav {
+        display: none;
+    }
+
+    .about_us_info {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0 30px;
+    }
+
+    .intro h1,
+    .h1_house {
+        font-size: 72px;
+    }
+
+
+    .intro h1 {
+        margin-top: 100px;
+        line-height: 80px;
+    }   
+
+    .h1_house {
+        line-height: 80px;
+    }
+
+    .about_us_text h2.h2 {
+        font-size: 32px;
+        line-height: 35px;
+    }
+
+    .about_us_text {
+        max-width: 600px;
+    }
+
+    .about_us_cart {
+        margin-top: 40px;
+    }
+
+    .about_us_card_text {
+        font-size: 18px;
+        padding: 0;
+        margin: 30px 20px;
+    }
+
+    .h1_discr {}
+
+    .asel {
+        height: 500px;
+        z-index: -1;
+        bottom: 0px;
+    }
+
+    .intro_button {
+        margin-top: 200px;
+        width: 300px;
+    }
+
+    .about_us {
+        padding-top: 50px;
+    }
+
+    .about_us_text_1 {
+        margin-bottom: 20px;
+    }
+
+    .about_us_info {
+        align-items: start;
+    }
+
+    /* 2 section */
+    .courses {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .courses:not(:first-child) {
+        margin-top: 40px;
+    }
+
+    .why_th {
+
+        padding: 40px;
+    }
+
+    .why_th_text {
+        line-height: 15px;
+        font-size: 14px;
+    }
+
+    .h3 {
+        font-size: 48px;
+        margin-top: 50px;
+    }
+
+    .couses_children {
+        font-size: 26px;
+        margin-top: 80px;
+    }
+
+    .couses_cart {
+        width: 270px;
+        height: 400px;
+    }
+
+    .couses_cart_2 {
+        width: 270px;
+        height: 400px;
+    }
+
+    .course_cart_image {
+        width: 180px;
+    }
+
+    .course_card_trans {
+        font-size: 18px;
+    }
+
+    .course_card_descr {
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .course_card_descr_2 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .courses_title1 {
+        margin-top: 40px;
+    }
+
+    /* team */
+    .team_cards {
+        flex-direction: column;
+    }
+
+    .team_card_left {
+        height: 300px;
+        padding: 0;
+    }
+
+    .team_card:first-child {
+        margin-bottom: 60px;
+    }
+
+    .contacts__block {
+        max-width: 400px;
+    }
+
+    .contacts__map {
+        width: 500px;
+    }
+
+    .contacts__header h1 {
+        line-height: 46px;
+        font-size: 40px;
+    }
+
+    .form__btn {
+        width: 100%;
+    }
+    .footer__nav ul{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer__nav__item{
+        margin-bottom: 10px;
+    }
+
+}
+
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+@media screen and (max-width:980px) {
+    .nav {
+        display: none;
+    }
+
+    .about_us_info {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0 30px;
+    }
+
+    .intro h1,
+    .h1_house {
+        font-size: 60px;
+    }
+
+    .intro h1 {
+        margin-top: 100px;
+        line-height: 48px;
+    }
+
+    .h1_house {
+        line-height: 48px;
+    }
+
+    .about_us_text h2.h2 {
+        font-size: 26px;
+        line-height: 23px;
+    }
+
+    .about_us_text {
+        max-width: 500px;
+    }
+
+    .about_us_cart {
+        margin-top: 40px;
+        margin-left: auto;
+    }
+
+    .about_us_card_text {
+        font-size: 18px;
+        padding: 0;
+        margin: 40px 20px;
+    }
+
+    .h1_discr {}
+
+    .asel {
+        height: 400px;
+        z-index: -1;
+        bottom: 53px;
+    }
+
+    .intro_button {
+        margin-top: 200px;
+        width: 300px;
+    }
+
+    .about_us {
+        padding-top: 50px;
+    }
+
+    .about_us_text_1 {
+        margin-bottom: 20px;
+    }
+
+    .about_us_info {
+        align-items: start;
+    }
+
+    /* 2 section */
+    .courses {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .courses:not(:first-child) {
+        margin-top: 40px;
+    }
+
+    .why_th {
+
+        padding: 40px;
+    }
+
+    .why_th_text {
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    .h3 {
+        font-size: 48px;
+        margin-top: 80px;
+    }
+
+    .couses_children {
+        font-size: 26px;
+        margin-top: 80px;
+    }
+
+    .couses_cart {
+        width: 250px;
+        height: 400px;
+    }
+
+    .course_cart_image {
+        width: 180px;
+    }
+
+    .course_card_trans {
+        font-size: 18px;
+    }
+
+    .course_card_descr {
+        font-size: 10px;
+    }
+
+    .courses_title1 {
+        margin-top: 40px;
+    }
+
+    /* team */
+    .team_cards {
+        flex-direction: column;
+    }
+
+    .team_card:first-child {
+        margin-bottom: 60px;
+    }
+
+    .slick-dots button {
+        margin-right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+
+    /* contacts */
+    .contacts__wrap {
+        flex-direction: column-reverse;
+    }
+
+    .contacts__map {
+        margin-left: 0;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 50px;
+    }
+
+    .contacts__header h1 {
+        font-size: 30px
+    }
+
+    .contacts__header p {
+        max-width: 300px;
+    }
+
+    .contacts__block {
+        width: 100%;
+        margin-bottom: 40px;
+
+    }
+
+    .contacts {
+        margin-top: 60px;
+    }
+
+    .form__btn {
+        width: 100%;
+    }
+
+    .form__input::placeholder {
+        font-size: 16px;
+    }
+
+    .contacts__form span {
+        font-size: 16px;
+    }
+
+    .form__checkbox {
+        margin-left: 0;
+    }
+
+    .footer__nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__nav__item {
+        margin-bottom: 10px;
+    }
+
+}
+
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+@media screen and (max-width:768px) {
+    .nav {
+        display: none;
+    }
+
+    .about_us_info {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0 30px;
+    }
+
+    .intro h1,
+    .h1_house {
+        font-size: 45px;
+    }
+
+    .intro h1 {
+        margin-top: 50px;
+        line-height: 48px;
+    }
+
+    .h1_house {
+        line-height: 48px;
+    }
+
+    .about_us_text h2.h2 {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .about_us_cart {
+        margin-top: 40px;
+    }
+
+    .about_us_card_text {
+        font-size: 18px;
+        padding: 0;
+        margin: 40px 20px;
+    }
+
+    .h1_discr {}
+
+    .asel {
+        height: 293px;
+        z-index: -1;
+        bottom: 53px;
+    }
+
+    .intro_button {
+        margin: 250px auto 0;
+        width: 300px;
+    }
+
+    .about_us {
+        padding-top: 50px;
+    }
+
+    .about_us_text_1 {
+        margin-bottom: 20px;
+    }
+
+    .about_us_info {
+        align-items: start;
+    }
+
+    /* 2 section */
+    .courses {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .courses:not(:first-child) {
+        margin-top: 40px;
+    }
+
+    .why_th {
+
+        padding: 20px;
+    }
+
+    .why_th_text {
+        line-height: 30px;
+        font-size: 14px;
+    }
+
+    .h3 {
+        font-size: 36px;
+    }
+
+    .couses_children {
+        font-size: 20px;
+        margin-top: 80px;
+    }
+
+    .couses_cart {
+        width: 250px;
+        height: 400px;
+    }
+
+    .course_cart_image {
+        width: 180px;
+    }
+
+    .course_card_trans {
+        font-size: 18px;
+    }
+
+    .course_card_descr {
+        font-size: 10px;
+    }
+
+    .courses_title1 {
+        margin-top: 30px;
+    }
+
+    /* team */
+    .team {
+        padding: 0 15px;
+    }
+
+    .team__wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .team_cards {
+        flex-direction: column;
+    }
+
+    .team_card {
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 10px;
+
+    }
+
+    .team_card:first-child {
+        margin-bottom: 60px;
+    }
+
+    .team_card_left .team_card_right {
+        position: absolute;
+        background-color: rgba(0, 0, 0, .4);
+        width: 100%;
+        bottom: 0;
+        padding: 20px;
+    }
+
+    .team_card_left {
+
+        overflow: hidden;
+        position: relative;
+    }
+
+    .team_card_left {
+        width: 250px;
+    }
+
+    .teacher_img {
+        width: 100%;
+        position: absolute;
+        /* bottom: -70px; */
+    }
+
+    .teacher_skill {
+        margin-top: 10px;
+    }
+
+    .teacher_name {
+        margin-bottom: 15px;
+    }
+
+    .team_card_left .team_card_right {
+        display: block;
+    }
+
+    .team_card>.team_card_right {
+        display: none;
+    }
+
+    .teacher_name {
+        font-size: 33px;
+    }
+
+    .teacher_skill_text {
+        font-size: 20px;
+    }
+
+    .teacher_skill img {
+        width: 35px;
+    }
+
+    .team_card_left img {}
+
+    .team_card_left {
+        /* padding: 50px 0; */
+    }
+
+    .team_card_left {}
+
+    .slick-dots button {
+        margin-right: 30px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .btn {
+        bottom: 32px;
+        top: 50%;
+        transform: translateY(-15%);
+    }
+
+    .btn_right {
+        right: -30px;
+    }
+
+    .btn_left {
+        left: -30px;
+    }
+
+    /* contacts */
+    .contacts__wrap {
+        flex-direction: column-reverse;
+    }
+
+    .contacts__map {
+        margin-left: 0;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 50px;
+    }
+
+    .contacts__header h1 {
+        font-size: 30px
+    }
+
+    .contacts__header p {
+        max-width: 300px;
+    }
+
+    .contacts__block {
+        width: 100%;
+        margin-bottom: 40px;
+
+    }
+
+    .contacts {
+        margin-top: 60px;
+    }
+
+    .form__btn {
+        width: 100%;
+    }
+
+    .form__input::placeholder {
+        font-size: 16px;
+    }
+
+    .contacts__form span {
+        font-size: 16px;
+    }
+
+    .form__checkbox {
+        margin-left: 0;
+    }
+
+    .gallery_item img {
+        width: 100%;
+    }
+
+    .slick-dots {
+        display: none;
+    }
+
+    .footer__nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__nav__item {
+        margin-bottom: 10px;
+    }
+}
+
+/* *********************************** */
+/* *********************************** */
+/* *********************************** */
+/* *********************************** */
+@media screen and (max-width:650px) {
+    .team__wrap {
+        flex-direction: column;
+    }
+
+    .team_card {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .team_card>.team_card_right {
+        display: block;
+    }
+
+    .skill__none {
+        display: none;
+    }
+
+    .teacher_name {
+        font-size: 25px;
+    }
+
+    .teacher_skill_offer {
+        font-size: 12px;
+    }
+
+    .teacher_skill_text {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .team_card_left {
+        width: 220px;
+    }
+
+    .team_card_right {
+        margin-left: 20px;
+    }
+
+    .gallery_item img {
+        width: 100%;
+    }
+}
+
+
+
+
+/* *********************************** */
+/* *********************************** */
+/* *********************************** */
+/* *********************************** */
+@media screen and (max-width:570px) {
+    .nav {
+        display: none;
+    }
+
+    .about_us_info {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0 30px;
+    }
+
+    .intro h1,
+    .h1_house {
+        font-size: 45px;
+    }
+
+    .intro h1 {
+        margin-top: 50px;
+        line-height: 48px;
+    }
+
+    .h1_house {
+        line-height: 48px;
+    }
+
+    .about_us_text h2.h2 {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .about_us_cart {
+        margin-top: 40px;
+    }
+
+    .about_us_card_text {
+        font-size: 18px;
+        padding: 0;
+        margin: 40px 20px;
+    }
+
+    .h1_discr {}
+
+    .asel {
+        height: 293px;
+        z-index: -1;
+        bottom: 53px;
+    }
+
+    .intro_button {
+        margin: 250px auto 0;
+        width: 300px;
+    }
+
+    .about_us {
+        padding-top: 50px;
+    }
+
+    .about_us_text_1 {
+        margin-bottom: 20px;
+    }
+
+    .about_us_info {
+        align-items: start;
+    }
+
+    /* 2 section */
+    .courses {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .courses:not(:first-child) {
+        margin-top: 40px;
+    }
+
+    .why_th {
+
+        padding: 20px;
+    }
+
+    .why_th_text {
+        line-height: 30px;
+        font-size: 14px;
+    }
+
+    .h3 {
+        font-size: 36px;
+    }
+
+    .couses_children {
+        font-size: 20px;
+        margin-top: 80px;
+    }
+
+    .couses_cart {
+        width: 250px;
+        height: 400px;
+    }
+
+    .course_cart_image {
+        width: 180px;
+    }
+
+    .course_card_trans {
+        font-size: 18px;
+    }
+
+    .course_card_descr {
+        font-size: 10px;
+    }
+
+    .courses_title1 {
+        margin-top: 30px;
+    }
+
+    /* team */
+    .team__wrap {
+        flex-direction: column;
+    }
+
+    .team {
+        padding: 0 15px;
+    }
+
+    .team_cards {
+        flex-direction: column;
+    }
+
+    .team_card {
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+
+    }
+
+    .team_card:first-child {
+        margin-bottom: 60px;
+    }
+
+    .team_card_left .team_card_right {
+        position: absolute;
+        background-color: rgba(0, 0, 0, .4);
+        width: 100%;
+        bottom: 0;
+        padding: 20px;
+    }
+
+    .team_card_left {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .teacher_img {
+        width: 100%;
+        position: absolute;
+        /* bottom: -70px; */
+    }
+
+    .teacher_skill {
+        margin-top: 10px;
+    }
+
+    .teacher_name {
+        margin-bottom: 15px;
+    }
+
+    .team_card_left .team_card_right {
+        display: block;
+    }
+
+    .team_card>.team_card_right {
+        display: none;
+    }
+
+    .teacher_name {
+        font-size: 33px;
+    }
+
+    .teacher_skill_text {
+        font-size: 20px;
+    }
+
+    .teacher_skill img {
+        width: 35px;
+    }
+
+    .team_card_left img {}
+
+    .team_card_left {
+        /* padding: 50px 0; */
+    }
+
+    .team_card_left {
+        height: 500px;
+        /* padding: 300px 0; */
+    }
+
+    .slick-dots button {
+        margin-right: 20px;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .btn {
+        bottom: 20px;
+    }
+
+    .gallery_item img {
+        width: 100%;
+    }
+
+    /* contacts */
+    .contacts__wrap {
+        flex-direction: column-reverse;
+    }
+
+    .contacts__map {
+        margin-left: 0;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 50px;
+    }
+
+    .contacts__header h1 {
+        font-size: 30px
+    }
+
+    .contacts__header p {
+        max-width: 300px;
+    }
+
+    .contacts__block {
+        width: 100%;
+        margin-bottom: 40px;
+
+    }
+
+    .contacts {
+        margin-top: 60px;
+    }
+
+    .form__btn {
+        width: 100%;
+    }
+
+    .form__input::placeholder {
+        font-size: 16px;
+    }
+
+    .contacts__form span {
+        font-size: 16px;
+    }
+
+    .form__checkbox {
+        margin-left: 0;
+    }
+
+    .footer__nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20px;
+    }
+
+    .footer__nav ul li {
+        margin-bottom: 5px;
+
+    }
+
+    .footer__nav li.footer__nav__item a {
+        font-size: 14px;
+    }
+
+    .btn {
+        top: 50%;
+        transform: translateY(-20%);
+        bottom: 0;
+    }
+
+    .btn_right {
+        right: -30px;
+    }
+
+    .btn_left {
+        left: -30px;
+    }
+
+}
+
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+@media screen and (max-width:480px) {
+    .nav {
+        display: none;
+    }
+
+    .about_us_info {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .intro h1,
+    .h1_house {
+        font-size: 30px;
+    }
+
+    .intro h1 {
+        margin-top: 50px;
+        line-height: 48px;
+    }
+
+    .h1_house {
+        line-height: 48px;
+    }
+
+    .about_us_text h2.h2 {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .about_us_cart {
+        margin-top: 40px;
+    }
+
+    .about_us_card_text {
+        font-size: 18px;
+        padding: 0;
+        margin: 40px 20px;
+    }
+
+    .h1_discr {}
+
+    .asel {
+        height: 293px;
+        z-index: -1;
+        bottom: 60px;
+    }
+
+    .intro_button {
+        margin: 250px auto 0;
+        font-size: 14px;
+    }
+
+    .about_us {
+        padding-top: 50px;
+    }
+
+    .about_us_text_1 {
+        margin-bottom: 20px;
+    }
+
+    /* 2 section */
+    .courses {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .courses:not(:first-child) {
+        margin-top: 40px;
+    }
+
+    .why_th {
+
+        padding: 20px;
+    }
+
+    .why_th_text {
+        line-height: 30px;
+        font-size: 14px;
+    }
+
+    .h3 {
+        font-size: 36px;
+    }
+
+    .couses_children {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .couses_cart {
+        width: 250px;
+        height: 400px;
+    }
+
+    .course_cart_image {
+        width: 180px;
+    }
+
+    .course_card_trans {
+        font-size: 18px;
+    }
+
+    .course_card_descr {
+        font-size: 10px;
+    }
+
+    /* team */
+    .team {
+        padding: 0 15px;
+    }
+
+    .team_cards {
+        flex-direction: column;
+    }
+
+    .team_card {
+        position: relative;
+        flex-direction: column;
+        height: 450px;
+        width: 100%;
+
+    }
+
+    .team_card:first-child {
+        margin-bottom: 60px;
+    }
+
+    .team_card_left .team_card_right {
+        position: absolute;
+        background-color: rgba(0, 0, 0, .4);
+        width: 100%;
+        bottom: 0;
+        padding: 20px;
+    }
+
+    .team_card_left {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .teacher_img {
+        width: 100%;
+        position: absolute;
+        /* bottom: -70px; */
+    }
+
+    .teacher_skill {
+        margin-top: 10px;
+    }
+
+    .teacher_name {
+        margin-bottom: 15px;
+    }
+
+    .team_card_left .team_card_right {
+        display: block;
+    }
+
+    .team_card>.team_card_right {
+        display: none;
+    }
+
+    .teacher_name {
+        font-size: 33px;
+    }
+
+    .teacher_skill_text {
+        font-size: 20px;
+    }
+
+    .teacher_skill img {
+        width: 35px;
+    }
+
+    .slick-dots button {
+        display: none;
+    }
+
+
+    .btn {
+        top: 50%;
+        transform: translateY(-100%);
+        height: 30px;
+    }
+
+    .btn_left {
+        left: -10px;
+    }
+
+    .btn_right {
+        right: -10px;
+    }
+
+    .btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .gallery_item img {
+        width: 100%;
+    }
+
+    /* contacts */
+    .contacts__wrap {
+        flex-direction: column-reverse;
+    }
+
+    .contacts__map {
+        margin-left: 0;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 50px;
+    }
+
+    .contacts__header h1 {
+        font-size: 30px
+    }
+
+    .contacts__header p {
+        max-width: 200px;
+    }
+
+    .contacts__block {
+        max-width: 280px;
+        margin-bottom: 40px;
+
+    }
+
+    .contacts {
+        margin-top: 60px;
+    }
+
+    .form__btn {
+        width: 100%;
+    }
+
+    .form__input::placeholder {
+        font-size: 16px;
+    }
+
+    .contacts__form span {
+        font-size: 12px;
+    }
+
+    .form__checkbox {
+        margin-left: 0;
+    }
+
+    .footer__nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20px;
+    }
+
+    .footer__nav ul li {
+        margin-bottom: 5px;
+
+    }
+
+    .footer__nav li.footer__nav__item a {
+        font-size: 12px;
+    }
+
+}
+
+/* ********************************************** */
+/* ********************************************** */
+/* ********************************************** */
+/* ********************************************** */
+
+
+@media screen and (max-width:400px) {
+    .nav {
+        display: none;
+    }
+
+    .about_us_info {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .intro h1,
+    .h1_house {
+        font-size: 30px;
+    }
+
+    .intro h1 {
+        margin-top: 50px;
+        line-height: 48px;
+    }
+
+    .h1_house {
+        line-height: 48px;
+    }
+
+    .about_us_text h2.h2 {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .about_us_cart {
+        margin-top: 40px;
+    }
+
+    .about_us_card_text {
+        font-size: 18px;
+        padding: 0;
+        margin: 40px 20px;
+    }
+
+    .h1_discr {}
+
+    .asel {
+        height: 293px;
+        z-index: -1;
+        bottom: 60px;
+    }
+
+    .intro_button {
+        margin: 250px auto 0;
+        font-size: 14px;
+    }
+
+    .about_us {
+        padding-top: 50px;
+    }
+
+    .about_us_text_1 {
+        margin-bottom: 20px;
+    }
+
+    /* 2 section */
+    .courses {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .courses:not(:first-child) {
+        margin-top: 40px;
+    }
+
+    .why_th {
+
+        padding: 20px;
+    }
+
+    .why_th_text {
+        line-height: 30px;
+        font-size: 14px;
+    }
+
+    .h3 {
+        font-size: 36px;
+    }
+
+    .couses_children {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .couses_cart {
+        width: 250px;
+        height: 380px;
+    }
+
+    .course_cart_image {
+        width: 180px;
+    }
+
+    .course_card_trans {
+        font-size: 18px;
+    }
+
+    .course_card_descr {
+        font-size: 18px;
+    }
+
+    /* team */
+    .team {
+        padding: 0 15px;
+    }
+
+    .team_cards {
+        flex-direction: column;
+    }
+
+    .team_card {
+        position: relative;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .team_card:first-child {
+        margin-bottom: 60px;
+    }
+
+
+    .team_card_left .team_card_right {
+        position: absolute;
+        background-color: rgba(0, 0, 0, .4);
+        width: 100%;
+        bottom: 0;
+        padding: 20px;
+    }
+
+    .team_card_left {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .teacher_img {
+        width: 100%;
+        position: absolute;
+        /* bottom: 0; */
+    }
+
+    .teacher_skill {
+        margin-top: 10px;
+    }
+
+    .teacher_name {
+        margin-bottom: 15px;
+    }
+
+    .team_card_left .team_card_right {
+        display: block;
+    }
+
+    .team_card>.team_card_right {
+        display: none;
+    }
+
+    .teacher_name {
+        font-size: 24px;
+    }
+
+    .teacher_skill_text {
+        font-size: 18px;
+    }
+
+    .teacher_skill img {
+        width: 35px;
+    }
+
+    .team_card .team_card_left {
+        height: 360px;
+        padding: 0
+    }
+
+    /* slider */
+    .slick-dots button {
+        display: none;
+    }
+
+    .btn {
+        top: 50%;
+        transform: translateY(-100%);
+        height: 30px;
+    }
+
+    .btn_left {
+        left: -10px;
+    }
+
+    .btn_right {
+        right: -10px;
+    }
+
+    .btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .gallery_item img {
+        width: 100%;
+    }
+
+    /* contacts */
+    .contacts__wrap {
+        flex-direction: column-reverse;
+    }
+
+    .contacts__map {
+        margin-left: 0;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 50px;
+    }
+
+    .contacts__header h1 {
+        font-size: 30px
+    }
+
+    .contacts__header p {
+        max-width: 200px;
+    }
+
+    .contacts__block {
+        max-width: 280px;
+        margin-bottom: 40px;
+
+    }
+
+    .contacts {
+        margin-top: 60px;
+    }
+
+    .form__btn {
+        width: 100%;
+    }
+
+    .form__input::placeholder {
+        font-size: 16px;
+    }
+
+    .contacts__form span {
+        font-size: 12px;
+    }
+
+    .form__checkbox {
+        margin-left: 0;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__logo {
+        margin-bottom: 30px;
+    }
+
+    .footer__nav {
+        margin-bottom: 30px;
+    }
+
+    .footer__nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+    }
+
+    .footer__nav ul li {
+        margin-bottom: 5px;
+
+    }
+
+    .footer__nav li.footer__nav__item a {
+        font-size: 12px;
+    }
+
+
+
+}
+
+
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
+/* ********************************************* */
