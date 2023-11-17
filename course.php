@@ -55,7 +55,6 @@
               </p>
               <div class="price">
                   <p class="course_card_descr_2">
-                  <p>Цена: <?= $course['price']; ?> тг</p>
                   <p>Продолжительность (в месяцах): <?= $course['duration']; ?></p>
                   </p>
               </div>

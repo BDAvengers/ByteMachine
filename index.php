@@ -63,10 +63,10 @@
 
       
       <div class="intro">
-        <h1 class="h1">Techno<span class="h1_house">House</span></h1>
+        <h1 class="h1">Byte <span class="h1_house">Machine</span></h1>
         <p class="h1_discr">Образовательная школа новых технологий</p>
         <a href="#contacts" class="intro_button">Заказать звонок</a>
-        <img src="images/Group 16.png" alt="" class="asel" />
+        <img src="" alt="">
       </div>
     </div>
   </div>
