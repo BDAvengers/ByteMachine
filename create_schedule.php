@@ -8,9 +8,15 @@ $stmt->execute();
 $scheduleData = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Выполните запрос для получения информации о группах
-$stmt2 = $connect->prepare("SELECT group_name, group_type FROM groups_all");
+$stmt2 = $connect->prepare("SELECT group_id, group_name, group_type FROM groups_all");
 $stmt2->execute();
-$group_type = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+$groupData = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
+// Создайте ассоциативный массив, используя group_id в качестве ключа
+$groupMap = [];
+foreach ($groupData as $group) {
+    $groupMap[$group['group_id']] = $group;
+}
 ?>
 
 <!DOCTYPE html>
@@ -49,20 +55,23 @@ $group_type = $stmt2->fetchAll(PDO::FETCH_ASSOC);
             </thead>
             <tbody>
 
-                <?php foreach ($scheduleData as $schedule): ?>
-                    <tr class="schedule-row">
-                        <td><input type="text" name="time[]" value="<?php echo $schedule['time']; ?>" readonly></td>
-                        <?php for ($day = 1; $day <= 7; $day++): ?>
-                            <?php
-                            $readonly = ($schedule["day_$day"] == $group_id || $schedule["day_$day"] === NULL) ? '' : 'readonly';
-                            ?>
-                            <td>
-                                <!-- Отображение данных -->
-                                <input type="text" name="day_<?php echo $day; ?>[]" class="schedule-input" value="<?php echo $group_type[$group_id]['group_name'] . ' - ' . $group_type[$group_id]['group_type']; ?>" <?php echo $readonly; ?>>
-                            </td>
-                        <?php endfor; ?>
-                    </tr>
-                <?php endforeach; ?>
+            <?php foreach ($scheduleData as $schedule): ?>
+                <tr class="schedule-row">
+                    <td><input type="text" name="time[]" value="<?php echo $schedule['time']; ?>" readonly></td>
+                    <?php for ($day = 1; $day <= 7; $day++): ?>
+                        <?php
+                        $readonly = ($schedule["day_$day"] == $group_id || $schedule["day_$day"] === NULL) ? '' : 'readonly';
+                        $groupId = $schedule["day_$day"];
+                        ?>
+                        <td>
+                            <!-- Скрытое поле для сохранения group_id -->
+                            <input type="hidden" name="day_<?php echo $day; ?>_group_id[]" value="<?php echo $groupId; ?>">
+                            <!-- Отображение данных -->
+                            <input type="text" name="day_<?php echo $day; ?>[]" class="schedule-input" value="<?php echo isset($groupMap[$groupId]['group_name']) ? $groupMap[$groupId]['group_name'] . ' - ' . $groupMap[$groupId]['group_type'] : ''; ?>" <?php echo $readonly; ?>>
+                        </td>
+                    <?php endfor; ?>
+                </tr>
+            <?php endforeach; ?>
 
             </tbody>
         </table>

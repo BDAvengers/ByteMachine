@@ -64,7 +64,7 @@
             </header>
         </div>
     </div>
-    <?php 
+    <?php  
         if (isset($_SESSION['message'])) {
             echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
             unset($_SESSION['message']);
@@ -73,13 +73,17 @@
 
     <?php if ($results): ?>
         <p class="couses_children"><?= $results[0]['course_name']; ?></p>
-        <p>Цена: <?= $results[0]['price']; ?></p>
+        <p>Описания: <?= $results[0]['overview']; ?></p>
+        <p>Курс начинается: <?= $results[0]['start_date']; ?></p>
+        <p>Статус: <?= $results[0]['status']; ?></p>
 
         <?php foreach ($results as $result): ?>
             <?php if ($result['group_type'] == 'individual'): ?>
                 <p>Тип группы: <?= $result['group_type']; ?> <a href="schedule.php?group_id=<?= $result['group_id'];?>">Посмотреть расписание</a></p>
+                <p>Цена: <?= $result['ind_price']; ?></p>
             <?php elseif ($result['group_type'] == 'group'): ?>
                 <p>Тип группы: <?= $result['group_type']; ?> <a href="schedule.php?group_id=<?= $result['group_id'];?>">Посмотреть расписание</a></p>
+                <p>Цена: <?= $result['group_price']; ?></p>
             <?php endif; ?>
         <?php endforeach; ?>
 
