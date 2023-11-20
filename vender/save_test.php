@@ -28,13 +28,23 @@ foreach ($times as $index => $time) {
     // Удаляем последнюю запятую и пробел
     $updateClause = rtrim($updateClause, ', ');
 
-    $statement = $connect->prepare("UPDATE schedule SET $updateClause WHERE time = :time");
+    $existingGroupId = isset($_POST['existing_group_id'][$index]) ? filter_var(trim($_POST['existing_group_id'][$index]), FILTER_VALIDATE_INT) : null;
+    if (!is_null($existingGroupId)) {
+        // Если уже существует group_id, обновляем только эту запись
+        $statement = $connect->prepare("UPDATE schedule SET $updateClause WHERE time = :time AND day_1 = :existing_group_id");
+        $params[':existing_group_id'] = $existingGroupId;
+    } else {
+        // Если group_id новый, добавляем новую запись
+        $statement = $connect->prepare("UPDATE schedule SET $updateClause WHERE time = :time");
+    }
 
     // Биндим параметры динамически
     foreach ($params as $paramName => &$paramValue) {
         $paramType = is_null($paramValue) ? PDO::PARAM_NULL : PDO::PARAM_INT;
         $statement->bindParam($paramName, $paramValue, $paramType);
     }
+
+    // Выполняем запрос
     $statement->execute();
 }
 
