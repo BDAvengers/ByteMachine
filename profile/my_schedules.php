@@ -114,9 +114,9 @@
             </thead>
             <tbody>
 
-            <?php for ($i = 9; $i <= 18; $i++): ?>
+            <?php for ($hour = 9; $hour <= 18; $hour++): ?>
                 <tr class="schedule-row">
-                    <td><?php printf('%02d:00', $i); ?></td>
+                    <td><?php echo sprintf('%02d:00 - %02d:50', $hour, $hour); ?></td>
                     <?php for ($day = 1; $day <= 7; $day++): ?>
                         <td>
                             <?php
@@ -125,7 +125,8 @@
                                     $groupId = $group['group_id'];
                                     $groupSchedule = $scheduleData[$groupId]; // Получите расписание для текущей группы
                                     foreach ($groupSchedule as $schedule) {
-                                        if ($schedule["time"] == sprintf('%02d:00', $i) && $schedule["day_$day"] == $groupId) {
+                                        $timeRange = sprintf('%02d:00 - %02d:50', $hour, $hour);
+                                        if ($schedule["time"] == $timeRange && $schedule["day_$day"] == $groupId) {
                                             $currentGroups[] = $schedule['group_name'] . '<br>' . $schedule['group_type'];
                                             break;
                                         }

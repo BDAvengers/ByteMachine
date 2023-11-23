@@ -1,6 +1,6 @@
 <?php
 require 'vender/connect.php';
-$group_id = $_GET['group_id'];
+$group_id = $_GET['group_id']; 
 
 // Выполните запрос к базе данных, чтобы извлечь данные
 $stmt = $connect->prepare("SELECT * FROM schedule");

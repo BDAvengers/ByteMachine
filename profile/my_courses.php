@@ -101,11 +101,11 @@
 
     <?php if (isset($_SESSION['clients'])): ?>
         <div class="create_course">
-            <a href="my_all_schedules.php"><h3>Мои расписания</h3></a>
+            <a href="schedules_for_clt.php"><h3>Мои расписания</h3></a>
         </div>
     <?php elseif (isset($_SESSION['employees'])): ?>
         <div class="create_course">
-            <a href="my_all_schedules.php"><h3>Мои расписания</h3></a>
+            <a href="schedules_for_emp.php"><h3>Мои расписания</h3></a>
         </div>
     <?php endif; ?>
 

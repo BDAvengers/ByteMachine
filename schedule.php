@@ -20,14 +20,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create schedule</title>
+    <title>Schedule</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <?php require 'blocks/header.php'?>
+
+    <?php if (isset($_SESSION['message'])) : ?>
+        <p class="msg"> <?php echo $_SESSION['message']; ?> </p>
+        <?php unset($_SESSION['message']); ?>
+    <?php endif; ?>
+
     <?php if (!$hasSchedule): ?>
-        <p>Вы еще не добавили расписание</p>
+        <p>Преподаватель еще не добавил расписание</p>
     <?php else: ?>
 
         <table>
@@ -45,16 +51,17 @@
             </thead>
             <tbody>
 
-            <?php for ($i = 9; $i <= 18; $i++): ?>
+            <?php for ($hour = 9; $hour <= 18; $hour++): ?>
                 <tr class="schedule-row">
-                    <td><?php printf('%02d:00', $i); ?></td>
+                    <td><?php echo sprintf('%02d:00 - %02d:50', $hour, $hour); ?></td>
                     <?php for ($day = 1; $day <= 7; $day++): ?>
                         <td>
                             <?php
                                 $currentGroups = array();
                                 foreach ($scheduleData as $schedule) {
                                     // Проверяем, соответствует ли время и день в расписании текущему времени и дню цикла
-                                    if ($schedule["time"] == sprintf('%02d:00', $i) && $schedule["day_$day"] == $group_id) {
+                                    $timeRange = sprintf('%02d:00 - %02d:50', $hour, $hour);
+                                    if ($schedule["time"] == $timeRange && $schedule["day_$day"] == $group_id) {
                                         $currentGroups[] = $schedule['group_name'] . '<br>' . $schedule['group_type'];
                                     }
                                 }
@@ -67,5 +74,13 @@
             </tbody>
         </table>
     <?php endif; ?>
+
+<form action="vender/buy_course.php" method="post"> 
+    <input type="hidden" id="client_id" name="client_id" value="<?php echo $_SESSION['client_id']; ?>">
+    <input type="hidden" id="date_pay" name="date_pay">
+    <input type="hidden" id="group_id" name="group_id" value="<?php echo $_GET['group_id']; ?>">   
+    <input type="submit" value="Купить этот курс">                
+</form>                 
+
 </body>
 </html>

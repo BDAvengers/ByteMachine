@@ -22,10 +22,8 @@ foreach ($groupData as $group) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
-    
 </head>
 <body>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var removeButtons = document.querySelectorAll('.remove-group');
@@ -103,7 +101,7 @@ foreach ($groupData as $group) {
                                     <?php foreach ($groupData as $groupOption): ?>
                                         <?php if ($groupOption['group_id'] == $group_id): ?>
                                         <option value="<?php echo $groupOption['group_id']; ?>">
-                                            <?php echo $groupOption['group_name'] . ' - ' . $groupOption['group_type']; ?>
+                                        Курс: <?php echo $groupOption['group_name'] . ' - ' . $groupOption['group_type']; ?>
                                         </option>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
@@ -113,7 +111,7 @@ foreach ($groupData as $group) {
                                     <input type="hidden" name="<?php echo $day; ?>[]" value="<?php echo $groupId; ?>">
                                     <div>
                                         <span class="group-info">
-                                            <?php echo isset($groupMap[$groupId]['group_name']) ? $groupMap[$groupId]['group_name'] . ' - ' . $groupMap[$groupId]['group_type'] : '';?>
+                                            Курс: <?php echo isset($groupMap[$groupId]['group_name']) ? $groupMap[$groupId]['group_name'] . ' <br>Тип группы: ' . $groupMap[$groupId]['group_type'] : '';?>
                                         </span>
                                         <?php if ($groupId == $group_id): ?>
                                             <button type="button" class="remove-group" data-group-id="<?php echo $groupId; ?>">x</button>
