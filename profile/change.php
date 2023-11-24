@@ -101,10 +101,10 @@
         <?php elseif ($userType === 'employee'): ?>
             <?php foreach ($results as $result): ?>
                 <?php if ($result['group_type'] == 'individual'): ?>
-                    <p>Тип группы: <?= $result['group_type']; ?> <a href="../test_schedule.php?group_id=<?= $result['group_id'];?>">Добавить расписание</a></p>
+                    <p>Тип группы: <?= $result['group_type']; ?> <a href="test_schedule.php?group_id=<?= $result['group_id'];?>">Добавить расписание</a></p>
                     <p>Цена: <?= $result['ind_price']; ?></p>
                 <?php elseif ($result['group_type'] == 'group'): ?>
-                    <p>Тип группы: <?= $result['group_type']; ?> <a href="../test_schedule.php?group_id=<?= $result['group_id'];?>">Добавить расписание</a></p>
+                    <p>Тип группы: <?= $result['group_type']; ?> <a href="test_schedule.php?group_id=<?= $result['group_id'];?>">Добавить расписание</a></p>
                     <p>Цена: <?= $result['group_price']; ?></p>
                 <?php endif; ?>
         <?php endforeach; ?>

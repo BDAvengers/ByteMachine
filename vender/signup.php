@@ -21,7 +21,7 @@
         $_SESSION['message'] = "Введите номер телефона в формате 87776665544";
         header('Location: ../sign-up.php');
         exit();
-    } else if (mb_strlen($password) < 6 || mb_strlen($password) > 30) {
+    } else if (mb_strlen($password) < 6 || mb_strlen($password) > 50) {
         $_SESSION['message'] = "Пароль должен содержать больше 6";
         header('Location: ../sign-up.php');
         exit();

@@ -24,6 +24,19 @@
         $scheduleData2[$current_group_id] = $clientSchedule;
     }
 
+    $hasScheduleData = false;
+
+    foreach ($clients as $client) {
+        $groupId = $client['group_id'];
+        $clientSchedule = $scheduleData2[$groupId]; // Получите расписание для текущей группы
+
+        // Проверка наличия хотя бы одного расписания
+        if (!empty($clientSchedule)) {
+            $hasScheduleData = true;
+            break;
+        }
+    }
+
     if (!isset($_SESSION['clients']) && !isset($_SESSION['employees'])) {
         header('Location: index.php');
         exit();
@@ -86,7 +99,7 @@
     </div>
 
     <?php if (!empty($scheduleData2)): ?>
-        <?php if(!empty($clientSchedule)): ?>
+        <?php if ($hasScheduleData): ?>
             <table>
                 <thead>
                     <tr>
@@ -128,7 +141,7 @@
                 </tbody>
             </table>
         <?php else: ?>
-            <p>Преподаватель удалил или еще не добавил расписание</p>
+            <p>Преподаватель еще не добавил или удалил расписание</p>
         <?php endif; ?>
     <?php else: ?>
         <p>У вас еще нет курса</p>

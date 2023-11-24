@@ -24,7 +24,7 @@
 
             <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
             <li class="nav_item2">
-                <a href="profile.php" class="nav_item_link2">
+                <a href="profile/profile.php" class="nav_item_link2">
                     <?php 
                         if (isset($_SESSION['clients'])) {
                             echo $_SESSION['clients']['full_name'];

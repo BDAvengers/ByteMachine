@@ -49,6 +49,6 @@ foreach ($times as $index => $time) {
 }
 
 $_SESSION['message'] = 'Расписание успешно сохранено!';
-header("Location: ../test_schedule.php?group_id=$group_id");
+header("Location: ../profile/test_schedule.php?group_id=$group_id");
 exit();
 ?>

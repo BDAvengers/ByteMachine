@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'vender/connect.php';
+require '../vender/connect.php';
 $group_id = $_GET['group_id'];
 $stmt = $connect->prepare("SELECT * FROM schedule");
 $stmt->execute();
@@ -70,7 +70,7 @@ foreach ($groupData as $group) {
     <p class="msg"> <?php echo $_SESSION['message']; ?> </p>
     <?php unset($_SESSION['message']); ?>
 <?php endif; ?>
-<form action="vender/save_test.php" method="post">
+<form action="../vender/save_test.php" method="post">
     <input type="hidden" name="group_id" value="<?php echo $group_id; ?>">
     <table>
         <thead>

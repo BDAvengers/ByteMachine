@@ -75,12 +75,14 @@
         </table>
     <?php endif; ?>
 
-<form action="vender/buy_course.php" method="post"> 
-    <input type="hidden" id="client_id" name="client_id" value="<?php echo $_SESSION['client_id']; ?>">
-    <input type="hidden" id="date_pay" name="date_pay">
-    <input type="hidden" id="group_id" name="group_id" value="<?php echo $_GET['group_id']; ?>">   
-    <input type="submit" value="Купить этот курс">                
-</form>                 
+<?php if (isset($_SESSION['clients'])): ?>
+    <form action="vender/buy_course.php" method="post"> 
+        <input type="hidden" id="client_id" name="client_id" value="<?php echo $_SESSION['client_id']; ?>">
+        <input type="hidden" id="date_pay" name="date_pay">
+        <input type="hidden" id="group_id" name="group_id" value="<?php echo $_GET['group_id']; ?>">   
+        <input type="submit" value="Купить этот курс">                
+    </form>     
+<?php endif; ?>               
 
 </body>
 </html>

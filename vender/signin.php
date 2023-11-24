@@ -28,7 +28,7 @@
             "date_birth" => $employees['date_birth']
         ];
         $_SESSION['emp_id'] = $employees['emp_id'];
-        header('Location: ../profile.php');
+        header('Location: ../profile/profile.php');
         exit();
     } 
     
@@ -46,7 +46,7 @@
             "phone_number" => $clients['phone_number']
         ];
         $_SESSION['client_id'] = $clients['client_id'];
-        header('Location: ../profile.php');
+        header('Location: ../profile/profile.php');
         exit();
     } 
 

@@ -10,8 +10,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Byte Machine</title>
-  <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -39,7 +39,7 @@
 
         <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
         <li class="nav_item2">
-            <a href="profile.php" class="nav_item_link2">
+            <a href="profile/profile.php" class="nav_item_link2">
                 <?php 
                     if (isset($_SESSION['clients'])) {
                         echo $_SESSION['clients']['full_name'];

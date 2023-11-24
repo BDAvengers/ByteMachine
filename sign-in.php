@@ -35,16 +35,12 @@
                 <li class="nav_item">
                 <a href="comand.php" class="nav_item_link">Команда</a>
                 </li>
-                <?php if (isset($_SESSION['clients'])) { ?>
-                <li class="nav_item2"> <a href="profile.php" class="nav_item_link2"><?php echo $_SESSION['clients']['full_name']; ?></a></li>
-                <?php } else { ?>
-                    <li class="nav_item2">
-                        <a href="sign-in.php" class="nav_item_link2">Войти</a>
-                    </li>
-                    <li class="nav_item2">
-                        <a href="sign-up.php" class="nav_item_link2">Регистрация</a>
-                    </li>
-                <?php } ?>
+                <li class="nav_item2">
+                    <a href="sign-in.php" class="nav_item_link2">Войти</a>
+                </li>
+                <li class="nav_item2">
+                    <a href="sign-up.php" class="nav_item_link2">Регистрация</a>
+                </li>
             </ul>
             </header>
         </div>

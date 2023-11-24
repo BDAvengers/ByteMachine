@@ -56,11 +56,11 @@ foreach ($times as $index => $time) {
 
 if ($isEmpty) {
     $_SESSION['message'] = 'Пожалуйста, добавьте расписание';
-    header("Location: ../create_schedule.php?group_id=$group_id");
+    header("Location: ../profile/create_schedule.php?group_id=$group_id");
     exit();
 } else {
     $_SESSION['message'] = 'Расписания успешно сохранены!';
-    header("Location: ../create_schedule.php?group_id=$group_id");
+    header("Location: ../profile/create_schedule.php?group_id=$group_id");
     exit();
 }
 ?>
