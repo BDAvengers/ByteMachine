@@ -81,7 +81,7 @@
                 </li>
                 <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
                 <li class="nav_item2">
-                    <a href="../profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
+                    <a href="../profile/profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
                 </li>
                 <?php } else { ?>
                     <li class="nav_item2">
@@ -110,6 +110,7 @@
     <?php endif; ?>
 
 
+    <?php if (!empty($courses)): ?>
     <?php foreach ($courses as $course): ?>
         <a href="change.php?course_id=<?php echo $course['course_id']; ?>">
 
@@ -133,6 +134,9 @@
         </div>
         </a>
     <?php endforeach; ?>
+    <?php else: ?>
+        <h2>У вас нет курса</h2> 
+    <?php endif; ?>        
 
 </body>
 </html>

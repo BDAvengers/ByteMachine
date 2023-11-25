@@ -51,6 +51,11 @@
             <label for="">ФИО</label>
             <input type="text" name="full_name" id="full_name" placeholder="Введите свое полное имя">
 
+            <label for="date_birth">Дата рождения:</label>
+            <input type="date" id="date_birth" name="date_birth">
+
+            <input type="hidden" id="date_hire" name="date_hire"> 
+
             <label for="">Адрес электронный почты</label>
             <input type="email" name="email" id="email" placeholder="Введите свой адрес электронной почты">
 

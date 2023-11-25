@@ -5,7 +5,7 @@
   <div class="wrap">
       <div class="container">
         <header class="header">
-          <a href="Index.php" class="logo">
+          <a href="index.php" class="logo">
             <img src="images/logo_2.png" alt="" />
           </a>
           <ul class="nav">

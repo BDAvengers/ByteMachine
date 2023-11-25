@@ -2,7 +2,7 @@
   require 'vender/connect.php';
       
   $courses = [];
-  $statement = $connect->prepare("SELECT * FROM courses");
+  $statement = $connect->prepare("SELECT * FROM courses ORDER BY course_id");
   $statement->execute();
   $courses = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>

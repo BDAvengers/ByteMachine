@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['clients']) && !isset($_SESSION['employees'])) {
-        header('Location: #');
+        header('Location: ../index.php');
         exit();
     } else if (isset($_SESSION['clients'])) {
         // Действия, связанные с клиентом
@@ -46,7 +46,7 @@
                 </li>
                 <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
                 <li class="nav_item2">
-                    <a href="../profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
+                    <a href="profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
                 </li>
                 <?php } else { ?>
                     <li class="nav_item2">
@@ -68,6 +68,7 @@
         <form class="prof" method="post">
             <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
                 <h1>ФИО: <?= $user['full_name']; ?></h1>
+                <h2>Дата рождения: <?= $user['date_birth']; ?></h2>
                 <h2>Номер телефона: <?= $user['phone_number']; ?></h2>
                 <h2>Электронная почта: <?= $user['email']; ?></h2>
                 <a href="../vender/logout.php" class="logout"> <h3>Выход</h3></a>

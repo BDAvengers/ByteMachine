@@ -10,6 +10,8 @@
     $ind_price = filter_var(trim($_POST['ind_price'] ?? ''), FILTER_SANITIZE_STRING);
     $group_group = filter_var(trim($_POST['group_group'] ?? ''), FILTER_SANITIZE_STRING);
     $group_price = filter_var(trim($_POST['group_price'] ?? ''), FILTER_SANITIZE_STRING);
+    $start_date = filter_var(trim($_POST['start_date'] ?? ''), FILTER_SANITIZE_STRING);
+
 
     if (empty($course_name) || empty($lvl) || empty($overview) || empty($duration))  {
         $_SESSION['message'] = 'Пожалуйста, заполните все поля';
@@ -17,8 +19,8 @@
         exit();
     } 
 
-    $statement = $connect->prepare("INSERT INTO courses (course_name, emp_id, lvl, overview, duration, ind_group, ind_price, group_group, group_price) 
-    VALUES (:course_name, :emp_id, :lvl, :overview, :duration, :ind_group, :ind_price, :group_group, :group_price)");
+    $statement = $connect->prepare("INSERT INTO courses (course_name, emp_id, lvl, overview, duration, ind_group, ind_price, group_group, group_price, start_date) 
+    VALUES (:course_name, :emp_id, :lvl, :overview, :duration, :ind_group, :ind_price, :group_group, :group_price, :start_date)");
     $statement->bindParam(':course_name', $course_name);
     $statement->bindParam(':emp_id', $emp_id);
     $statement->bindParam(':lvl', $lvl);
@@ -28,6 +30,7 @@
     $statement->bindParam(':ind_price', $ind_price);
     $statement->bindParam(':group_group', $group_group);
     $statement->bindParam(':group_price', $group_price);
+    $statement->bindParam(':start_date', $start_date);
 
     if ($statement->execute()) {
         $course_id_stmt = $connect->query("SELECT last_value FROM courses_course_id_seq");

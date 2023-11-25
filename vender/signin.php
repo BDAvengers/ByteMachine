@@ -43,7 +43,8 @@
             "client_id" => $clients['client_id'], 
             "full_name" => $clients['full_name'],
             "email" => $clients['email'],
-            "phone_number" => $clients['phone_number']
+            "phone_number" => $clients['phone_number'],
+            "date_birth" => $clients['date_birth']
         ];
         $_SESSION['client_id'] = $clients['client_id'];
         header('Location: ../profile/profile.php');

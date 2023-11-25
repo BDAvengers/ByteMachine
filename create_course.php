@@ -12,7 +12,7 @@
     <?php
         if (!isset($_SESSION['employees'])) {
             header('Location: course.php');
-        }
+        } 
     ?>
 
     <?php 
@@ -46,8 +46,11 @@
         <label for="group_group">Групповое занятие:</label>
         <input type="text" id="group_group" name="group_group">
 
-        <label for="group_price">Цена индивидуального занятия (в тг):</label>
+        <label for="group_price">Цена группового занятия (в тг):</label>
         <input type="numeric" id="group_price" name="group_price">
+
+        <label for="start_date">Дата начала курса:</label>
+        <input type="date" id="start_date" name="start_date">
 
         <input type="submit" value="Создать курс">
     </form>

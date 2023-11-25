@@ -1,13 +1,18 @@
 <?php
     session_start();
     $full_name = filter_var(trim($_POST['full_name'] ?? ''), FILTER_SANITIZE_STRING);
+    $date_birth = filter_var(trim($_POST['date_birth'] ?? ''), FILTER_SANITIZE_STRING);
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_STRING);
     $phone_number = filter_var(trim($_POST['phone_number'] ?? ''), FILTER_SANITIZE_STRING);
     $password = filter_var(trim($_POST['password'] ?? ''), FILTER_SANITIZE_STRING);
     $password_confirm = filter_var(trim($_POST['password_confirm'] ?? ''), FILTER_SANITIZE_STRING);
     $phone_number_pattern = '/^8{1}7{1}\d{9}$/'; // Регулярное выражение для проверки номера телефона 
 
-    if (empty($full_name) || empty($email) || empty($phone_number) || empty($password) || empty($password_confirm)) {
+    $timezone = new DateTimeZone('Asia/Almaty');
+    $date = new DateTime('now', $timezone);
+    $date_hire = $date->format('Y-m-d'); // Текущая дата и время
+
+    if (empty($full_name) || empty($email) || empty($phone_number) || empty($password) || empty($password_confirm) || empty($date_birth)) {
         $_SESSION['message'] = 'Пожалуйста, заполните все поля';
         header('Location: ../sign-up.php');
         exit();
@@ -40,6 +45,16 @@
     }
 
     require 'connect.php';
+    $check_statement = $connect->prepare("SELECT * FROM clients WHERE email = :email");
+    $check_statement->bindParam(':email', $email);
+    $check_statement->execute();
+    $existing_email = $check_statement->fetch();
+
+    if ($existing_email) {
+        $_SESSION['message'] = 'Такой email уже существует';
+        header('Location: ../sign-up.php');
+        exit();
+    }
     
     $check_statement2 = $connect->prepare("SELECT * FROM employees WHERE email = :email");
     $check_statement2->bindParam(':email', $email);
@@ -55,11 +70,14 @@
     // Хеширование пароля
     $password = md5($password."jfgdhds2345");
 
-    $statement = $connect->prepare("INSERT INTO employees (full_name, email, phone_number, password) VALUES (:full_name, :email, :phone_number, :password)");
+    $statement = $connect->prepare("INSERT INTO employees (full_name, date_birth, email, phone_number, password, date_hire) 
+    VALUES (:full_name, :date_birth, :email, :phone_number, :password, :date_hire)");
     $statement->bindParam(':full_name', $full_name);
+    $statement->bindParam(':date_birth', $date_birth);
     $statement->bindParam(':email', $email);
     $statement->bindParam(':phone_number', $phone_number);
     $statement->bindParam(':password', $password);
+    $statement->bindParam(':date_hire', $date_hire);
     $statement->execute();
 
     $_SESSION['message'] = 'Регистрация прошла успешно!';

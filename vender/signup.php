@@ -1,13 +1,14 @@
 <?php
     session_start();
     $full_name = filter_var(trim($_POST['full_name'] ?? ''), FILTER_SANITIZE_STRING);
+    $date_birth = filter_var(trim($_POST['date_birth'] ?? ''), FILTER_SANITIZE_STRING);
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_STRING);
     $phone_number = filter_var(trim($_POST['phone_number'] ?? ''), FILTER_SANITIZE_STRING);
     $password = filter_var(trim($_POST['password'] ?? ''), FILTER_SANITIZE_STRING);
     $password_confirm = filter_var(trim($_POST['password_confirm'] ?? ''), FILTER_SANITIZE_STRING);
     $phone_number_pattern = '/^8{1}7{1}\d{9}$/'; // Регулярное выражение для проверки номера телефона 
-
-    if (empty($full_name) || empty($email) || empty($phone_number) || empty($password) || empty($password_confirm)) {
+ 
+    if (empty($full_name) || empty($email) || empty($phone_number) || empty($password) || empty($password_confirm) || empty($date_birth)) {
         $_SESSION['message'] = 'Пожалуйста, заполните все поля';
         header('Location: ../sign-up.php');
         exit();
@@ -65,8 +66,10 @@
     // Хеширование пароля
     $password = md5($password."jfgdhds2345");
 
-    $statement = $connect->prepare("INSERT INTO clients (full_name, email, phone_number, password) VALUES (:full_name, :email, :phone_number, :password)");
+    $statement = $connect->prepare("INSERT INTO clients (full_name, date_birth, email, phone_number, password) 
+    VALUES (:full_name, :date_birth, :email, :phone_number, :password)");
     $statement->bindParam(':full_name', $full_name);
+    $statement->bindParam(':date_birth', $date_birth);
     $statement->bindParam(':email', $email);
     $statement->bindParam(':phone_number', $phone_number);
     $statement->bindParam(':password', $password);
