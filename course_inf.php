@@ -38,9 +38,9 @@
 
     <?php if ($results): ?>
         <p class="couses_children"><?= $results[0]['course_name']; ?></p>
-        <p>Описания: <?= $results[0]['overview']; ?></p>
-        <p>Курс начинается: <?= $results[0]['start_date']; ?></p>
-        <p>Статус: <?= $results[0]['status']; ?></p>
+        <h2>Описания: <?= $results[0]['overview']; ?></h2>
+        <h2>Курс начинается: <?= $results[0]['start_date']; ?></h2>
+        <h2>Статус: <?= $results[0]['status']; ?></h2>
 
         <?php foreach ($results as $result): ?>
             <?php

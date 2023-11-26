@@ -25,6 +25,19 @@
         $scheduleData[$current_group_id] = $groupSchedule;
     } 
 
+    $hasScheduleData = false;
+
+    foreach ($groups as $group) {
+        $groupId = $group['group_id'];
+        $groupSchedule = $scheduleData[$groupId]; // Получите расписание для текущей группы
+
+        // Проверка наличия хотя бы одного расписания
+        if (!empty($groupSchedule)) {
+            $hasScheduleData = true;
+            break;
+        }
+    }
+
 
     if (!isset($_SESSION['clients']) && !isset($_SESSION['employees'])) {
         header('Location: index.php');
@@ -72,7 +85,7 @@
                 </li>
                 <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
                 <li class="nav_item2">
-                    <a href="../profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
+                    <a href="../profile/profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
                 </li>
                 <?php } else { ?>
                     <li class="nav_item2">
@@ -87,7 +100,7 @@
         </div>
     </div>
 
-        <?php if (!empty($scheduleData)): ?>
+        <?php if ($hasScheduleData): ?>
             <table>
                 <thead>
                     <tr>
@@ -129,10 +142,10 @@
                 </tbody>
             </table>
 
+            <?php else: ?>
+                <p>Вы еще не добавили расписание</p>
+            <?php endif; ?>
 
-        <?php else: ?>
-            <p>Вы еще не добавили расписание</p>
-        <?php endif; ?>
 
 </body>
 </html>

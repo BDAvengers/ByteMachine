@@ -1,8 +1,6 @@
 <?php
     require '../vender/connect.php';
     session_start();
-    $emp_id = $_SESSION['emp_id'] ?? null; // Получаем emp_id из сессии
-    $client_id = $_SESSION['client_id'] ?? null;
     $courses = [];
     $user = null;
 
@@ -14,7 +12,7 @@
         $user = $_SESSION['employees'];
 
         $statement = $connect->prepare("SELECT * FROM courses WHERE emp_id = :emp_id");
-        $statement->bindParam(':emp_id', $emp_id);
+        $statement->bindParam(':emp_id', $_SESSION['emp_id']);
         $statement->execute();
         $courses = $statement->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -24,8 +22,8 @@
         $user = $_SESSION['clients'];
     
         $clientCourses = [];
-        $statement = $connect->prepare("SELECT * FROM trans WHERE client_id = :client_id");
-        $statement->bindParam(':client_id', $client_id);
+        $statement = $connect->prepare("SELECT * FROM trans WHERE client_id = :client_id AND status = 'Оплачен'");
+        $statement->bindParam(':client_id', $_SESSION['client_id']);
         $statement->execute();
         $transactions = $statement->fetchAll(PDO::FETCH_ASSOC);
     

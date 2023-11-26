@@ -1,9 +1,3 @@
-  <?php
-    session_start();
-  ?>
-</html>
-  <div class="wrap">
-      <div class="container">
         <header class="header">
           <a href="index.php" class="logo">
             <img src="images/logo_2.png" alt="" />
@@ -19,12 +13,12 @@
               <a href="course.php" class="nav_item_link">Курсы</a>
             </li>
             <li class="nav_item">
-              <a href="comand.php" class="nav_item_link">Команда</a>
+              <a href="command.php" class="nav_item_link">Команда</a>
             </li>
 
             <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
             <li class="nav_item2">
-                <a href="profile/profile.php" class="nav_item_link2">
+                <a href="profile.php" class="nav_item_link2">
                     <?php 
                         if (isset($_SESSION['clients'])) {
                             echo $_SESSION['clients']['full_name'];
@@ -45,5 +39,3 @@
             
           </ul>
         </header>
-      </div>
-  </div>

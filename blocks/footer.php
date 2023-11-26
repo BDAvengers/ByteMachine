@@ -1,8 +1,8 @@
   <footer class="footer">
-      <div class="container">
+      <div class="container_2">
         <div class="footer__logo">
-          <a href="./index.html">
-            <img src="images/LOGO.svg" alt="" />
+          <a href="../index.php">
+            <img src="images/logo_2.png" alt="" />
           </a>
         </div>
         <div class="footer__nav">
@@ -15,7 +15,8 @@
             </li>
             <li class="footer__nav__item">
               <a href="">
-                Казахстан, город Алматы<br />
+                Казахстан, город Алматы
+                <br>
                 улица Абдуллиных, дом 30</a>
             </li>
           </ul>
@@ -27,5 +28,5 @@
             </a>
           </div>
         </div>
-      </div>
+        </div>
     </footer>

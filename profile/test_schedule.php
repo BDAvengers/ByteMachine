@@ -1,7 +1,34 @@
 <?php
 session_start();
 require '../vender/connect.php';
+
+if (!isset($_SESSION['employees']) || !isset($_SESSION['emp_id'])) {
+    header('Location: ../index.php');
+    exit();
+} else if (isset($_SESSION['employees'])) { 
+    // Действия, связанные со сотрудником
+    $user = $_SESSION['employees'];
+}
+
+$emp_id = $_SESSION['emp_id'];
+
 $group_id = $_GET['group_id'];
+
+$stmt_check_group = $connect->prepare("SELECT COUNT(*) FROM courses 
+    JOIN groups_all ON courses.course_id = groups_all.course_id 
+    WHERE courses.emp_id = :emp_id AND groups_all.group_id = :group_id");
+
+$stmt_check_group->bindParam(':group_id', $group_id);
+$stmt_check_group->bindParam(':emp_id', $emp_id);
+$stmt_check_group->execute();
+$count = $stmt_check_group->fetchColumn();
+
+if ($count == 0) {
+    header("Location: ../index.php");
+    exit();
+}
+
+
 $stmt = $connect->prepare("SELECT * FROM schedule");
 $stmt->execute();
 $scheduleData = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -13,17 +40,6 @@ $groupData = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 $groupMap = [];
 foreach ($groupData as $group) {
     $groupMap[$group['group_id']] = $group;
-}
-
-if (!isset($_SESSION['clients']) && !isset($_SESSION['employees'])) {
-    header('Location: ../index.php');
-    exit();
-} else if (isset($_SESSION['clients'])) {
-    // Действия, связанные с клиентом
-    $user = $_SESSION['clients']; 
-} else if (isset($_SESSION['employees'])) {
-    // Действия, связанные со сотрудником
-    $user = $_SESSION['employees'];
 }
 ?>
 
@@ -95,7 +111,7 @@ if (!isset($_SESSION['clients']) && !isset($_SESSION['employees'])) {
                 <li class="nav_item">
                 <a href="../comand.php" class="nav_item_link">Команда</a>
                 </li>
-                <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
+                <?php if (isset($_SESSION['employees'])) { ?>
                 <li class="nav_item2">
                     <a href="profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
                 </li>

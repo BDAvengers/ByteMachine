@@ -2,7 +2,33 @@
     session_start();
     require '../vender/connect.php';
    
-    $course_id = $_GET['course_id']; 
+    $course_id = $_GET['course_id'];
+    
+    if (isset($_SESSION['employees'])) {
+        $stmt_check_group = $connect->prepare("SELECT COUNT(*) FROM courses WHERE emp_id = :emp_id AND course_id = :course_id");
+        $stmt_check_group->bindParam(':emp_id', $_SESSION['emp_id']);
+        $stmt_check_group->bindParam(':course_id', $course_id);
+        $stmt_check_group->execute();
+        $count=$stmt_check_group->fetchColumn();
+
+        if ($count == 0) {
+            header('Location: my_courses.php');
+        }
+    } 
+    if (isset($_SESSION['clients'])) {
+        $stmt_check_group2 = $connect->prepare("SELECT COUNt(*) FROM trans WHERE client_id = :client_id AND course_id = :course_id");
+        $stmt_check_group2->bindParam(':client_id', $_SESSION['client_id']);
+        $stmt_check_group2->bindParam(':course_id', $course_id);
+        $stmt_check_group2->execute();
+        $count2=$stmt_check_group2->fetchColumn();
+
+        if ($count2 == 0) {
+            header("Location: my_courses.php");
+        }
+    }
+
+    
+
     $statement = $connect->prepare("SELECT * FROM courses JOIN groups_all ON courses.course_id = groups_all.course_id 
     WHERE courses.course_id = :course_id");
     $statement->bindParam(':course_id', $course_id);
