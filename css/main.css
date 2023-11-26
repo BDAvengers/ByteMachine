@@ -263,9 +263,11 @@ body {
 }
 .footer {
     margin-top: 80px;
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 30px;
     width: 100%;
     position: relative;
+    z-index: 2;
 }
 
 .footer .container {
@@ -317,11 +319,11 @@ footer::before {
     top: 5px;
     left: 0;
     right: 0;
-    height: 223px;
+    height: 190px;
     width: 100%;
     background-image: url('../images/wave (7).svg');
     background-size: cover;
     background-position: 0 0;
-    z-index: 0;
+    z-index: -1;
 }
 

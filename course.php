@@ -1,27 +1,10 @@
 <?php 
+  session_start();
   require 'vender/connect.php';
-      
   $courses = [];
   $statement = $connect->prepare("SELECT * FROM courses ORDER BY course_id");
   $statement->execute();
   $courses = $statement->fetchAll(PDO::FETCH_ASSOC);
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-    <?php require "blocks/header.php" ?>
-    
-    <?php 
     $isEmployee = isset($_SESSION['employees']);
     if ($isEmployee) {
         // Пользователь является сотрудником, поэтому отображаем кнопку "Создать курс"
@@ -30,13 +13,27 @@
         // Пользователь не является сотрудником, поэтому скрываем кнопку "Создать курс"
         $showCreateCourseButton = false;
     }
-    ?>
+    
+?>
 
-    <?php if ($showCreateCourseButton) { ?>
-      <div class="create_course">
-        <a href="create_course.php"><h3>Создать свой курс</h3></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="css/course.css">
+</head>
+<body>
+  <div class="wrap">
+      <div class="container">
+        <?php require "blocks/header.php" ?>
       </div>
-    <?php } ?>
+      <?php if ($showCreateCourseButton) { ?>
+        <div class="create_course">
+          <a href="create_course.php"><h3>Создать свой курс</h3></a>
+        </div>
+      <?php } ?>
  
       <p class="couses_children">Все курсы</p>
       <?php foreach ($courses as $course): ?>
@@ -62,5 +59,9 @@
           </div>
         </a>
       <?php endforeach; ?>
+
+      <?php require 'blocks/footer.php' ?>
+
+  </div>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/about-us.css" />
 </head>
 <body>
-    <div class="wrap">
+    <div class="wrap"> 
         <div class="container">
             <?php require "blocks/header.php" ?>
         </div>

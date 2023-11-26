@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comand</title>
-<link rel="stylesheet" href="css/normalize.css" />
-<link rel="stylesheet" href="css/main.css" />
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/command.css">
 </head>
 <body>
-    <?php require "blocks/header.php" ?>
-    <div id="team" class="team">
-        <h3 class="h3">Команда</h3>
+<div class="wrap"> 
+    <div class="container">
+      <?php require "blocks/header.php" ?>
+    </div>
+      <div id="team" class="team">
+        <h3 class="couses_children">Команда</h3>
         <div class="team__wrap">
           <div class="team_cards">
             <div class="team_card">
@@ -138,34 +139,12 @@
           </div>
         </div>
       </div>
-      </div>
-      <h4 class="h4">Галерея</h4>
-      <div class="galery_slider">
-        <div class="galery_wrap multiple-items">
-          <div class="gallery_item"><img src="images/1.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/2.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/3.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/4.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/5.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/6.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/7.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/8.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/9.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/10.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/11.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/12.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/13.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/14.JPG" alt="" /></div>
-          <div class="gallery_item"><img src="images/15.JPG" alt="" /></div>
-        </div>
-        <div class="btn btn_right">
-          <img src="images/ic_round-arrow-forward-ios.svg" alt="" />
-        </div>
-        <div class="btn btn_left">
-          <img src="images/ic_round-arrow-back-ios-new.svg" alt="" />
-        </div>
-      </div>
-    </div>
+
+
     <?php require "blocks/footer.php" ?>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
