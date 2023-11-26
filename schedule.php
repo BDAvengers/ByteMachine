@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'vender/connect.php';
     $group_id = $_GET['group_id'];
     $stmt = $connect->prepare("SELECT s.*, g.group_id, g.group_name, g.group_type

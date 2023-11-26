@@ -6,7 +6,7 @@ body {
     z-index: 0;
     margin: 0;
 }
- 
+
 .wrap {
     width: 100%;
     background: linear-gradient(180deg, #7163b8 3.44%, rgba(60, 26, 174, 0.98) 59.35%, #2201c8 83.25%);
@@ -109,7 +109,6 @@ body {
 
 
 .footer {
-    margin-top: 80px;
     padding-top: 80px;
     padding-bottom: 30px;
     width: 100%;
@@ -173,57 +172,139 @@ footer::before {
     z-index: -1;
 }
 
-.about_us {
-    padding-top: 80px;
-    padding-left: 80px;
-    padding-right: 80px;
-}
-
-.container_about_us {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    width: 100%;
+section {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 80px;
+    position: relative;
+    max-width: 400px;
+    border: 3px solid rgba(255, 255, 255, 0.729);
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    align-items: center;
+    padding: 2rem 3rem;
     background: linear-gradient(180deg, #1d03a1 3.44%, rgb(88 54 202 / 98%) 59.35%, #6d58d4 83.25%);
     position: relative;
     z-index: 0;
-    border-radius: 30px;
 }
 
-.about_us_info {
+.section {
+    display: flex;
+    justify-content: center;
+    
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+}
+
+.inputbox > div > label {
+    padding-left: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 20px;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+input:focus~label,
+input:valid~label,
+input[value]~label {
+    top: -5px;
+}
+
+input:not(:placeholder-shown)~label {
+    top: -5px;
+}
+
+.inputbox > input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.inputbox > div{
+    padding-bottom: 10px;
+}
+
+#email::placeholder {
+    color: #ffffff92; /* Цвет плейсхолдера */
+   
+}
+
+#password::placeholder {
+    color: #ffffff92; /* Цвет плейсхолдера */
+}
+
+.forget {
+    margin: 35px 0;
+    font-size: 0.95rem;
+    color: #fff;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-.about_us_text {
-    max-width: 395px;
-}
-.about_us_text_1 {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 22px;
-    color: #D8D5F9
-}
-.h2 {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 36px;
-    color: #D8D5F9;
-    margin-top: 10px;
-}
-.about_us_cart {
-    max-width: 710px;
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10.5px);
-    border-radius: 30px;
+.forget label {
+    display: flex;
+    align-items: center;
 }
 
-.about_us_card_text {
-    margin: 40px 50px;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 27px;
-    letter-spacing: 0.05em;
-    color: rgba(0, 0, 0, 0.7);
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget a {
+    color: #fff;
+    font-weight: 600;
+    padding-left: 115px;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255,255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+  background-color: rgb(255, 255,255, 0.5);
+}
+
+.register {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
 }

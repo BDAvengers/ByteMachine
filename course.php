@@ -13,9 +13,8 @@
         // Пользователь не является сотрудником, поэтому скрываем кнопку "Создать курс"
         $showCreateCourseButton = false;
     }
-    
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,8 +1,8 @@
-  <footer class="footer">
+    <footer class="footer">
       <div class="container_2">
         <div class="footer__logo">
-          <a href="index.php">
-            <img src="images/logo_2.png" alt="" />
+          <a href="../index.php">
+            <img src="../images/logo_2.png" alt="" />
           </a>
         </div>
         <div class="footer__nav">
@@ -24,7 +24,7 @@
         <div class="footer__social">
           <div class="social__item">
             <a href="https://www.instagram.com/techno.house.almaty/">
-              <img src="images/pngaaa 1.png" alt="" />
+              <img src="../images/pngaaa 1.png" alt="" />
             </a>
           </div>
         </div>
