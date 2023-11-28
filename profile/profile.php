@@ -16,30 +16,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/normalize.css"/>
-    <link rel="stylesheet" href="../css/style.css">
-    
+    <link rel="stylesheet" href="../css/profile.css">
 </head> 
 <body> 
     <div class="wrap">
         <div class="container">
             <?php require "../blocks/header_in_folder.php" ?>
         </div>
+        <div class="container2">
+            <div class="left_box">
+                <div class="left_container">
+                    <p><a href="../profile/my_courses.php">Мои курсы</a></p>
+                    <p><a href="">Редактировать профиль</a></p>
+                </div>
+            </div>
+            <div class="right_box">
+                <div class="right_container">
+                    <form class="prof" method="post">
+                        <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
+                            <h1><?= $user['full_name']; ?></h1>
+                            <p>Дата рождения: <?= $user['date_birth']; ?></p>
+                            <p><?= $user['phone_number']; ?></h2>
+                            <p>Электронная почта: <?= $user['email']; ?></p>
+                        <?php } ?>
+                    </form>
+                </div>
+                <h2>Образование</h2>
+                <div class="right_container">
+                    <form class="prof" method="post">
+                        <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
+                            
+                        <?php } ?>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <?php require "../blocks/footer_in_folder.php" ?>
     </div>
-        <div class="create_course">
-            <a href="my_courses.php"><h3>Мои курсы</h3></a>
-        </div> 
-    <div class="forma">
-        <form class="prof" method="post">
-            <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
-                <h1>ФИО: <?= $user['full_name']; ?></h1>
-                <h2>Дата рождения: <?= $user['date_birth']; ?></h2>
-                <h2>Номер телефона: <?= $user['phone_number']; ?></h2>
-                <h2>Электронная почта: <?= $user['email']; ?></h2>
-                <a href="../vender/logout.php" class="logout"> <h3>Выход</h3></a>
-            <?php } ?>
-        </form>
-    </div>
+    <script src="../js/dropdown.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ body {
     z-index: 0;
     margin: 0;
 }
-
+ 
 .wrap {
     width: 100%;
     background: linear-gradient(180deg, #7163b8 3.44%, rgba(60, 26, 174, 0.98) 59.35%, #2201c8 83.25%);
@@ -37,12 +37,6 @@ body {
     margin: 0 auto;
 }
 
-.container2 {
-    width: 100%;
-    margin: 0 auto;
-    margin-left: 20px;
-    margin-right: 20px;
-}
 
 .container_2 {
     display: flex;
@@ -181,6 +175,7 @@ body {
 
 
 .footer {
+    margin-top: 80px;
     padding-top: 80px;
     padding-bottom: 30px;
     width: 100%;
@@ -244,139 +239,49 @@ footer::before {
     z-index: -1;
 }
 
-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
-    margin-bottom: 80px;
-    position: relative;
-    max-width: 400px;
-    border: 3px solid rgba(255, 255, 255, 0.729);
-    border-radius: 20px;
-    backdrop-filter: blur(55px);
-    align-items: center;
-    padding: 2rem 3rem;
-    background: linear-gradient(180deg, #1d03a1 3.44%, rgb(88 54 202 / 98%) 59.35%, #6d58d4 83.25%);
-    position: relative;
-    z-index: 0;
-}
-
-.section {
+.container2 {
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     
 }
 
-h1 {
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
+.left_box {
+    
+    padding-right: 20px;
 }
 
-.inputbox {
-    position: relative;
-    margin: 30px 0;
-    max-width: 310px;
+.left_container {
+    width: 300px;
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px;
+    border-radius: 12px;
 }
 
-.inputbox > div > label {
-    padding-left: 10px;
-    transform: translateY(-50%);
-    color: #fff;
+.left_container a {
+    color: #F2F6FF;
+    text-decoration: none;
     font-size: 20px;
-    pointer-events: none;
-    transition: all 0.5s ease-in-out;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
-input:focus~label,
-input:valid~label,
-input[value]~label {
-    top: -5px;
+.left_container a:hover {
+    color: #007BFF; /* Цвет текста при наведении */
+    border-bottom: 1px solid #007BFF; /* Линия снизу при наведении */    
 }
 
-input:not(:placeholder-shown)~label {
-    top: -5px;
+.right_container {
+    width: 700px;
+    background-color: #fff; /* Цвет фона правого контейнера */
+    color: #333; /* Цвет текста в правом контейнере */
+    padding: 20px; /* Отступ внутри правого контейнера */
+    border-radius: 12px;
 }
 
-.inputbox > input {
-    width: 100%;
-    height: 60px;
-    background: transparent;
-    font-size: 1rem;
-    padding: 0 35px 0 5px;
-    color: #fff;
-    border-radius: 15px;
+.right_box h2 {
+    color: #ffffffbc
 }
 
-.inputbox > div{
-    padding-bottom: 10px;
-}
 
-#email::placeholder {
-    color: #ffffff92; /* Цвет плейсхолдера */
-   
-}
 
-#password::placeholder {
-    color: #ffffff92; /* Цвет плейсхолдера */
-}
-
-.forget {
-    margin: 35px 0;
-    font-size: 0.95rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-}
-
-.forget label {
-    display: flex;
-    align-items: center;
-}
-
-.forget label input {
-    margin-right: 3px;
-}
-
-.forget a {
-    color: #fff;
-    font-weight: 600;
-    padding-left: 115px;
-}
-
-.forget a:hover {
-    text-decoration: underline;
-}
-
-button {
-    width: 100%;
-    height: 40px;
-    border-radius: 40px;
-    background-color: rgb(255, 255,255, 1);
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.4s ease;
-}
-
-button:hover {
-  background-color: rgb(255, 255,255, 0.5);
-}
-
-.register {
-    font-size: 0.9rem;
-    color: #fff;
-    text-align: center;
-    margin: 25px 0 10px;
-}
-
-.register p a {
-    color: #fff;
-    font-weight: 600;
-}
-
-.register p a:hover {
-    text-decoration: underline;
-}

@@ -23,9 +23,9 @@
         </div>
         <div class="footer__social">
           <div class="social__item">
-            <a href="https://www.instagram.com/techno.house.almaty/">
+          <a href="https://www.instagram.com/techno.house.almaty/" target="_blank">
               <img src="../images/pngaaa 1.png" alt="" />
-            </a>
+          </a>
           </div>
         </div>
         </div>

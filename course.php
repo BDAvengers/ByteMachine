@@ -60,7 +60,9 @@
       <?php endforeach; ?>
 
       <?php require 'blocks/footer.php' ?>
-
   </div>
+
+  <script src="js/dropdown.js"></script>
+  
 </body>
 </html>

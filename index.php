@@ -14,18 +14,17 @@
 <body>
   <div class="wrap">
     <div class="container">
-      
-    <?php require 'blocks/header.php'?>
-      
+      <?php require 'blocks/header.php'?>
+    </div>
       <div class="intro">
         <h1 class="h1">Byte<span class="h1_house">Machine</span></h1>
         <p class="h1_discr">Образовательная школа новых технологий</p>
         <a href="#contacts" class="intro_button">Заказать звонок</a>
       </div>
-    </div>
+      
   </div>
   <div class="wrap_2">
-    <div class="container">
+    <div class="container2">
       <div class="why_th">
         <p class="why_th_text">
           Мы стремимся сделать обучение программированию доступным и понятным
@@ -84,10 +83,9 @@
   </div>
 
   <?php require 'blocks/footer.php'?>
+
+  <script src="js/dropdown.js"></script>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="js/slick.min.js"></script>
-  <script src="js/main.js"></script>
 </body>
 
 </html>

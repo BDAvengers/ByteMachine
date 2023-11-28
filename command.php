@@ -147,8 +147,7 @@
 
     <?php require "blocks/footer.php" ?>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/main.js"></script>
+
+    <script src="js/dropdown.js"></script>
 </body>
 </html>

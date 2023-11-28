@@ -31,8 +31,9 @@ body {
 }
 
 .container {
+    display: flex;
     width: 100%;
-    max-width: 1140px;
+    max-width: 1175px;
     margin: 0 auto;
 }
 
@@ -71,6 +72,8 @@ body {
 
 .nav {
     display: flex;
+    align-items: center;
+    padding-left: 200px;
 }
 
 .nav_item {
@@ -79,6 +82,7 @@ body {
 }
 
 .nav_item2 {
+    padding-top: 7px;
     list-style-type: none;
     margin-right: 10px;
     margin-left: 30px;
@@ -107,6 +111,73 @@ body {
     color: #F2F6FF;
 }
 
+.user-box {
+    display: flex;
+    width: 327px; 
+    align-items: center;
+}
+
+#user-options {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.user-box a {
+    padding-top: 5px;
+    padding-bottom: 8px;
+    text-decoration: none;
+    line-height: 18px;
+    color: #F2F6FF;
+    display: block;
+    white-space: nowrap; /* Запрещает перенос текста на новую строку */
+    overflow: hidden; /* Скрывает содержимое, которое не помещается */
+    text-overflow: ellipsis; /* Заменяет не помещающееся содержимое многоточием */
+}
+
+.dropdown {
+    padding-top: 7px;
+    padding-left: 42px;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 18px;
+    color: #F2F6FF;
+}
+
+.dropdown-menu {
+    background-color: aliceblue;
+    padding: 10px 20px;
+    box-shadow: 0 5px 10px rgb(255, 255, 255);
+    border-radius: 7px;
+    width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
+
+.dropdown-menu.show {
+    z-index: 99;
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 0;
+    color: #000;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    opacity: 1;
+}
 
 .footer {
     margin-top: 80px;
