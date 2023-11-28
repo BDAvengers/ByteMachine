@@ -1,6 +1,6 @@
 <?php
+    session_start();
     require 'vender/connect.php';
-    $results = [];
     $course_id = $_GET['course_id']; 
     $statement = $connect->prepare("SELECT * FROM courses JOIN groups_all ON courses.course_id = groups_all.course_id 
     WHERE courses.course_id = :course_id");
@@ -18,55 +18,60 @@
 ?>
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course information</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Информация о курсе</title>
+    <link rel="stylesheet" href="css/course_inf.css">
 </head> 
 <body>
-
-    <?php require 'blocks/header.php'; ?>
-    <?php  
-        if (isset($_SESSION['message'])) {
-            echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-            unset($_SESSION['message']);
-        }
-    ?>
-
-    <?php if ($results): ?>
+    <div class="wrap"> 
+        <div class="container">
+            <?php require 'blocks/header.php'; ?>
+        </div>
+        <?php if ($results): ?>
         <p class="couses_children"><?= $results[0]['course_name']; ?></p>
-        <h2>Описания: <?= $results[0]['overview']; ?></h2>
-        <h2>Курс начинается: <?= $results[0]['start_date']; ?></h2>
-        <h2>Статус: <?= $results[0]['status']; ?></h2>
+        <div class="container2">
+            <div class="left_box">
+                <div class="left_container">
+                        <p>Описания: <?= $results[0]['overview']; ?></p>
+                        <p>Курс начинается: <?= $results[0]['start_date']; ?></p>
+                        <p>Статус: <?= $results[0]['status']; ?></p>
+                </div>
+            </div>
 
-        <?php foreach ($results as $result): ?>
-            <?php
-                $group_id = $result['group_id'];
-                $max_capacity = ($result['group_type'] == 'individual') ? 1 : 10;
+            <div class="right_box">
+                <h2>Группы для этого курса:</h2>
+                <?php foreach ($results as $result): ?>
+                                <?php
+                                    $group_id = $result['group_id'];
+                                    $max_capacity = ($result['group_type'] == 'individual') ? 1 : 10;
+                                    $stmt_count = $connect->prepare("SELECT COUNT(*) as count FROM trans WHERE group_id = :group_id and status in ('Оплачен', 'Забронирован')");
+                                    $stmt_count->bindParam(':group_id', $group_id);
+                                    $stmt_count->execute();
+                                    $count = $stmt_count->fetch(PDO::FETCH_ASSOC)['count'];
+                                ?>
+                    <div class="right_container">
+                        <p>
+                            Тип группы: <?= $result['group_type']; ?>
+                            <a href="schedule.php?group_id=<?= $result['group_id'];?>">Посмотреть расписание</a>
+                            <h3>[<?= $count . ' / ' . $max_capacity; ?>]</h3>
+                            
+                        </p>
+                        <?php if ($result['group_type'] == 'individual'): ?>
+                            <p>Цена: <?= $result['ind_price']; ?></p>
+                        <?php elseif ($result['group_type'] == 'group'): ?>
+                            <p>Цена: <?= $result['group_price']; ?></p>
+                        <?php endif; ?>
+                    </div>
                 
-                // Подготовка SQL-запроса для подсчета количества человек
-                $stmt_count = $connect->prepare("SELECT COUNT(*) as count FROM trans WHERE group_id = :group_id and status in ('Оплачен', 'Забронирован')");
-                $stmt_count->bindParam(':group_id', $group_id);
-                $stmt_count->execute();
-                $count = $stmt_count->fetch(PDO::FETCH_ASSOC)['count'];
-            ?>
-            
-            <p>
-                Тип группы: <?= $result['group_type']; ?>
-                <a href="schedule.php?group_id=<?= $result['group_id'];?>">Посмотреть расписание</a>
-                (<?= $count . ' / ' . $max_capacity; ?>)
-            </p>
-            
-            <?php if ($result['group_type'] == 'individual'): ?>
-                <p>Цена: <?= $result['ind_price']; ?></p>
-            <?php elseif ($result['group_type'] == 'group'): ?>
-                <p>Цена: <?= $result['group_price']; ?></p>
-            <?php endif; ?>
-        <?php endforeach; ?>
-
-    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+        </div> 
+        <?php require 'blocks/footer.php' ?>
+    </div>
+    <script src="js/dropdown.js"></script>
 </body>
 </html>

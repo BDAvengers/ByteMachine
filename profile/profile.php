@@ -24,7 +24,7 @@
             <?php require "../blocks/header_in_folder.php" ?>
         </div>
         <div class="container2">
-            <div class="left_box">
+            <div class="left_box"> 
                 <div class="left_container">
                     <p><a href="../profile/my_courses.php">Мои курсы</a></p>
                     <p><a href="">Редактировать профиль</a></p>
@@ -32,7 +32,7 @@
             </div>
             <div class="right_box">
                 <div class="right_container">
-                    <form class="prof" method="post">
+                    <form class="prof">
                         <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
                             <h1><?= $user['full_name']; ?></h1>
                             <p>Дата рождения: <?= $user['date_birth']; ?></p>

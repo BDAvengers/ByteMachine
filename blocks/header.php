@@ -32,7 +32,7 @@
                         <div id="dropdown" class="dropdown-menu">
                             <a href="profile/profile.php" class="dropdown-link">Профиль</a>
                             <a href="profile/my_courses.php" class="dropdown-link">Мои курсы</a>
-                            <a href="profile/my_courses.php" class="dropdown-link">Мои расписания</a>
+                            <a href="" class="dropdown-link">Мои расписания</a>
                             <a href="#" class="dropdown-link">Настройки</a>
                             <a href="vender/logout.php" class="dropdown-link">Выход</a>
                         </div>
