@@ -32,7 +32,11 @@
                         <div id="dropdown" class="dropdown-menu">
                             <a href="profile/profile.php" class="dropdown-link">Профиль</a>
                             <a href="profile/my_courses.php" class="dropdown-link">Мои курсы</a>
-                            <a href="" class="dropdown-link">Мои расписания</a>
+                            <?php if (isset($_SESSION['clients'])): ?>
+                                <a href="profile/schedules_for_clt.php" class="dropdown-link">Мои расписания</a>
+                            <?php elseif (isset($_SESSION['employees'])): ?>
+                                <a href="profile/schedules_for_emp.php" class="dropdown-link">Мои расписания</a>
+                            <?php endif; ?>
                             <a href="#" class="dropdown-link">Настройки</a>
                             <a href="vender/logout.php" class="dropdown-link">Выход</a>
                         </div>

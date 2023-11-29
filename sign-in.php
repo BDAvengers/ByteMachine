@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
     <link rel="stylesheet" href="css/sign-in.css">
+    <link rel="stylesheet" href="css/message.css">
 </head> 
 
 <body>
@@ -49,16 +50,16 @@
                 <div class="register">
                     <p class="upper">Если у вас нет аккаунта, пожалуйста, <a class="text-decoration-none" href="sign-up.php">зарегистрируйтесь</a></p>
                 </div>
-
+                <?php
+                if (isset($_SESSION['message'])) {
+                    echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+                    unset($_SESSION['message']);
+                }
+                ?>
             </form>
         </section>
         </div>
-        <?php
-            if (isset($_SESSION['message'])) {
-                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-                unset($_SESSION['message']);
-            }
-        ?>
+        
     
 
         <?php require 'blocks/footer.php' ?>

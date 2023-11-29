@@ -53,17 +53,18 @@
                                     $count = $stmt_count->fetch(PDO::FETCH_ASSOC)['count'];
                                 ?>
                     <div class="right_container">
-                        <p>
-                            Тип группы: <?= $result['group_type']; ?>
-                            <a href="schedule.php?group_id=<?= $result['group_id'];?>">Посмотреть расписание</a>
-                            <h3>[<?= $count . ' / ' . $max_capacity; ?>]</h3>
-                            
-                        </p>
+                        <div>
+                            <p>
+                                Тип группы: <?= $result['group_type']; ?> 
+                            </p>
+                            <p class="count_members">[<?= $count . ' / ' . $max_capacity; ?>]<p>
+                        </div>
                         <?php if ($result['group_type'] == 'individual'): ?>
                             <p>Цена: <?= $result['ind_price']; ?></p>
                         <?php elseif ($result['group_type'] == 'group'): ?>
                             <p>Цена: <?= $result['group_price']; ?></p>
                         <?php endif; ?>
+                        <a href="schedule.php?group_id=<?= $result['group_id'];?>">Посмотреть расписание</a>
                     </div>
                 
                 <?php endforeach; ?>

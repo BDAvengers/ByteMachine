@@ -113,23 +113,25 @@
                                         $count = $stmt_count->fetch(PDO::FETCH_ASSOC)['count'];
                                     ?>
                                     <div class="right_container">
-                                    <p>
-                                        Тип группы: <?= $result['group_type']; ?> [<?= $count . ' / ' . $max_capacity; ?>]
-                                    
-                                    </p>
-                                    <?php if ($result['group_type'] == 'individual'): ?>
-                                        <p>Цена: <?= $result['ind_price']; ?></p>
-                                    <?php elseif ($result['group_type'] == 'group'): ?>
-                                        <p>Цена: <?= $result['group_price']; ?></p>
-                                    <?php endif; ?>
-                                    <a href="test_schedule.php?group_id=<?= $result['group_id'];?>">Добавить расписание</a>
+                                        <div>
+                                            <p>
+                                                Тип группы: <?= $result['group_type']; ?>
+                                            </p>
+                                            <p class="count_members">[<?= $count . ' / ' . $max_capacity; ?>]<p>
+                                        </div>
+                                        <?php if ($result['group_type'] == 'individual'): ?>
+                                            <p>Цена: <?= $result['ind_price']; ?></p>
+                                        <?php elseif ($result['group_type'] == 'group'): ?>
+                                            <p>Цена: <?= $result['group_price']; ?></p>
+                                        <?php endif; ?>
+                                        <a href="test_schedule.php?group_id=<?= $result['group_id'];?>">Добавить расписание</a>
 
                                     </div>
-                                <?php endforeach; ?>
-                                <div class="my_schedules_link">
-                                    <a href="my_schedules.php?course_id=<?= $result['course_id']; ?>">Мои расписания для этого курса</a>
-                                </div>
-                                <?php endif; ?>
+                                    <?php endforeach; ?>
+                                    <div class="my_schedules_link">
+                                        <a href="my_schedules.php?course_id=<?= $result['course_id']; ?>">Мои расписания для этого курса</a>
+                                    </div>
+                                    <?php endif; ?>
                         
                     </div>
                     <?php endif; ?>

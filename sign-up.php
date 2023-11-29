@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) {
-        header('Location: profile.php');
+        header('Location: profile/profile.php');
     }
 ?>
 
@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зарегистрироваться</title>
+    <link rel="stylesheet" href="css/message.css">
     <link rel="stylesheet" href="css/sign-up.css">
 </head> 
 <body> 

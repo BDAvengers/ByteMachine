@@ -6,7 +6,7 @@ body {
     z-index: 0;
     margin: 0;
 }
-
+ 
 .wrap {
     width: 100%;
     background: linear-gradient(180deg, #7163b8 3.44%, rgba(60, 26, 174, 0.98) 59.35%, #2201c8 83.25%);
@@ -35,6 +35,13 @@ body {
     width: 100%;
     max-width: 1175px;
     margin: 0 auto;
+}
+
+.container2 {
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .container_2 {
@@ -137,8 +144,8 @@ body {
 .dropdown-toggle {
     text-decoration: none;
     font-weight: 400;
-    font-size: 30px; 
-    line-height: 18px;
+    font-size: 30px;
+    line-height: 18px; 
     color: #F2F6FF;
 }
 
@@ -239,100 +246,56 @@ footer::before {
     z-index: -1;
 }
 
-.couses_children {
-    margin: 30px;
-    font-size: 35px;
-    line-height: 24px;
-    color: #ffffffe8;
-    text-align: center;
-}
-
-.container2 {
-    display: flex;
-    justify-content: center;
-}
-
-.left_box {
-    padding-right: 20px;
-}
-
-.left_container {
-    width: 500px;
-    background: linear-gradient(180deg, rgb(22, 1, 22) 3.44%, rgba(52, 52, 55, 0.98) 59.35%, #3d3d3f 83.25%); 
-    box-shadow: 0 3px 10px rgb(255, 255, 255);
-    color: #fff; 
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.left_container h2 {
+.schedule-row {
     color: #F2F6FF;
-    text-decoration: none;
-    font-size: 20px;
 }
 
-.right_container {
-    margin-bottom: 10px;
-    width: 500px;
-    background-color: #fff; /* Цвет фона правого контейнера */
-    padding: 20px; /* Отступ внутри правого контейнера */
-    border-radius: 12px;
-    margin: 20px;
-}
-
-.count_members {
-    font-size: 20px;
-    padding-left: 20px;
-}
-
-.right_container p {
-    margin-top: 0px;
-}
-
-.right_container div {
+.schedule {
     display: flex;
+    margin: 45px;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-.right_container a {
-    color: #4524ed;
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.schedule-row td {
+    height: 40px;
+}
+
+form {
+    margin-top: 20px;
+    height: 50px;
+}
+
+input[type="submit"] {
     font-size: 20px;
-    text-decoration: none;
+    padding: 10px 30px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
-.right_container a:hover {
-    text-decoration: underline;
-}
-
-
-
-.right_box{
-    background: linear-gradient(209.21deg, rgb(15, 12, 156) 13.57%, rgb(2, 114, 194) 98.38%);
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgb(255, 255, 255);
-}
-
-.right_box h2 {
-    padding-left: 25px;
-    color: #ffffff;
-}
-
-.my_schedules_link {
-    padding-bottom: 20px;
-    text-align: center;
-    
-}
-
-.my_schedules_link a {
-    color: antiquewhite;
-    font-size: 25px;
-    text-decoration: none;
-    transition: color 0.1s;
-}
-
-.my_schedules_link a:hover {
-    color: rgb(49, 178, 185);
-    font-size: 25px;
-    text-decoration: underline;
-    transition: color 0.1s;
+input[type="submit"]:hover {
+    font-size: 21px;
+    padding: 10px 30px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgb(255, 255, 255);
 }

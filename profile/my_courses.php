@@ -62,7 +62,7 @@
         </div>
         <p class="couses_children">Мои курсы</p> 
 
-            <?php if (isset($_SESSION['clients'])): ?>
+            <?php if (isset($_SESSION['clients'])): ?> 
                 <div class="create_course">
                     <a href="schedules_for_clt.php"><h3>Мои расписания</h3></a>
                 </div>

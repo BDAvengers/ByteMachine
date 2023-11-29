@@ -59,47 +59,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои расписания</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/schedule.css">
 </head>
 <body>
 
     <div class="wrap">
         <div class="container">
-            <header class="header">
-            <a href="../index.php" class="logo">
-                <img src="../images/logo_2.png" alt="" />
-            </a>
-            <ul class="nav">
-                <li class="nav_item3">
-                <a href="../index.php" class="nav_item_link">Главная</a>
-                </li>
-                <li class="nav_item">
-                <a href="../about-us.php" class="nav_item_link">О нас</a>
-                </li>
-                <li class="nav_item">
-                <a href="../course.php" class="nav_item_link">Курсы</a>
-                </li>
-                <li class="nav_item">
-                <a href="../comand.php" class="nav_item_link">Команда</a>
-                </li>
-                <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
-                <li class="nav_item2">
-                    <a href="../profile/profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
-                </li>
-                <?php } else { ?>
-                    <li class="nav_item2">
-                        <a href="../sign-in.php" class="nav_item_link2">Войти</a>
-                    </li>
-                    <li class="nav_item2">
-                        <a href="../sign-up.php" class="nav_item_link2">Регистрация</a>
-                    </li>
-                <?php } ?>
-            </ul>
-            </header>
+            <?php require "../blocks/header_in_folder.php" ?>
         </div>
-    </div>
 
+        <div class="schedule">
         <?php if ($hasScheduleData): ?>
             <table>
                 <thead>
@@ -145,7 +114,9 @@
             <?php else: ?>
                 <p>Вы еще не добавили расписание</p>
             <?php endif; ?>
-
-
+        </div>
+    <?php require "../blocks/footer_in_folder.php" ?>
+    </div>
+    <script src="../js/dropdown.js"></script>
 </body>
 </html>
