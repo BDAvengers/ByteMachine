@@ -127,7 +127,7 @@ body {
     padding-bottom: 8px;
     text-decoration: none;
     line-height: 18px;
-    color: #F2F6FF;
+    color: #F2F6FF; 
     display: block;
     white-space: nowrap; /* Запрещает перенос текста на новую строку */
     overflow: hidden; /* Скрывает содержимое, которое не помещается */
@@ -253,10 +253,9 @@ footer::before {
 }
 
 .container_about_us {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     width: 100%;
-    background: linear-gradient(180deg, #1d03a1 3.44%, rgb(88 54 202 / 98%) 59.35%, #6d58d4 83.25%);
     position: relative;
     z-index: 0;
     border-radius: 30px;

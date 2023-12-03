@@ -135,7 +135,7 @@
                         
                     </div>
                     <?php endif; ?>
-        </div> 
+                </div> 
         <?php require "../blocks/footer_in_folder.php"  ?>   
     </div>
     <script src="../js/dropdown.js"></script>

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    session_start(); 
     require '../vender/connect.php';
     // расписания для сотрудника по course_id
     $course_id = $_GET['course_id'];
@@ -48,98 +48,70 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create schedule</title>
-    
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>My schedules</title>
+    <link rel="stylesheet" href="../css/schedule.css">
 </head>
 <body>
 
     <div class="wrap">
         <div class="container">
-            <header class="header">
-            <a href="../index.php" class="logo">
-                <img src="../images/logo_2.png" alt="" />
-            </a>
-            <ul class="nav">
-                <li class="nav_item3">
-                <a href="../index.php" class="nav_item_link">Главная</a>
-                </li>
-                <li class="nav_item">
-                <a href="../about-us.php" class="nav_item_link">О нас</a>
-                </li>
-                <li class="nav_item">
-                <a href="../course.php" class="nav_item_link">Курсы</a>
-                </li>
-                <li class="nav_item">
-                <a href="../comand.php" class="nav_item_link">Команда</a>
-                </li>
-                <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
-                <li class="nav_item2">
-                    <a href="../profile/profile.php" class="nav_item_link2"><?php echo $user['full_name']; ?></a>
-                </li>
-                <?php } else { ?>
-                    <li class="nav_item2">
-                        <a href="../sign-in.php" class="nav_item_link2">Войти</a>
-                    </li>
-                    <li class="nav_item2">
-                        <a href="../sign-up.php" class="nav_item_link2">Регистрация</a>
-                    </li>
-                <?php } ?>
-            </ul>
-            </header>
+            <?php require '../blocks/header_in_folder.php'?>
         </div>
-    </div>
 
-    <?php if (!$hasSchedule): ?>
-        <p>Вы еще не добавили расписание</p>
-    <?php else: ?>
+        <div class="schedule">
+            <?php if (!$hasSchedule): ?>
+                <p>Вы еще не добавили расписание</p>
+            <?php else: ?>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Время</th>
-                    <th>Понедельник</th>
-                    <th>Вторник</th>
-                    <th>Среда</th>
-                    <th>Четверг</th>
-                    <th>Пятница</th>
-                    <th>Суббота</th>
-                    <th>Воскресенье</th>
-                </tr>
-            </thead>
-            <tbody>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Время</th>
+                        <th>Понедельник</th>
+                        <th>Вторник</th>
+                        <th>Среда</th>
+                        <th>Четверг</th>
+                        <th>Пятница</th>
+                        <th>Суббота</th>
+                        <th>Воскресенье</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            <?php for ($hour = 9; $hour <= 18; $hour++): ?>
-                <tr class="schedule-row">
-                    <td><?php echo sprintf('%02d:00 - %02d:50', $hour, $hour); ?></td>
-                    <?php for ($day = 1; $day <= 7; $day++): ?>
-                        <td>
-                            <?php
-                                $currentGroups = array();
-                                foreach ($groups as $group) {
-                                    $groupId = $group['group_id'];
-                                    $groupSchedule = $scheduleData[$groupId]; // Получите расписание для текущей группы
-                                    foreach ($groupSchedule as $schedule) {
-                                        $timeRange = sprintf('%02d:00 - %02d:50', $hour, $hour);
-                                        if ($schedule["time"] == $timeRange && $schedule["day_$day"] == $groupId) {
-                                            $currentGroups[] = $schedule['group_name'] . '<br>' . $schedule['group_type'];
-                                            break;
+                <?php for ($hour = 9; $hour <= 18; $hour++): ?>
+                    <tr class="schedule-row">
+                        <td><?php echo sprintf('%02d:00 - %02d:50', $hour, $hour); ?></td>
+                        <?php for ($day = 1; $day <= 7; $day++): ?>
+                            <td>
+                                <?php
+                                    $currentGroups = array();
+                                    foreach ($groups as $group) {
+                                        $groupId = $group['group_id'];
+                                        $groupSchedule = $scheduleData[$groupId]; // Получите расписание для текущей группы
+                                        foreach ($groupSchedule as $schedule) {
+                                            $timeRange = sprintf('%02d:00 - %02d:50', $hour, $hour);
+                                            if ($schedule["time"] == $timeRange && $schedule["day_$day"] == $groupId) {
+                                                $currentGroups[] = $schedule['group_name'] . '<br>' . $schedule['group_type'];
+                                                break;
+                                            }
                                         }
                                     }
-                                }
-                                echo implode(', ', $currentGroups);
-                            ?>
-                        </td>
-                    <?php endfor; ?>
-                </tr>
-            <?php endfor; ?>
-            </tbody>
-        </table>
-    <?php endif; ?>
+                                    echo implode(', ', $currentGroups);
+                                ?>
+                            </td>
+                        <?php endfor; ?>
+                    </tr>
+                <?php endfor; ?>
+                </tbody>
+            </table>
+            <?php endif; ?>
+            </div>
+        <?php require "../blocks/footer_in_folder.php" ?>
+    </div>
+    <script src="js/dropdown.js"></script>
 </body>
 </html>

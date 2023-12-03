@@ -5,7 +5,7 @@ require 'connect.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status_from_bank = $_POST['status'];
     $group_id = $_POST['group_id'];
-    $client_id = $_SESSION['client_id'];
+    $client_id = $_SESSION['client_id']; 
 
     // Подзапрос для выбора последнего trans_id
     $last_trans_id_query = $connect->prepare("SELECT MAX(trans_id) FROM trans WHERE group_id = :group_id AND client_id = :client_id");

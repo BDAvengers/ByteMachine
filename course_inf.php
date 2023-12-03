@@ -24,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Информация о курсе</title>
     <link rel="stylesheet" href="css/course_inf.css">
+    <link rel="website icon" type="png" href="images/logo_2.png">
 </head> 
 <body>
     <div class="wrap"> 

@@ -244,7 +244,7 @@ footer::before {
     background-size: cover;
     background-position: 0 0;
     z-index: -1;
-}
+} 
 
 .schedule-row {
     color: #F2F6FF;
@@ -272,6 +272,12 @@ th {
     background-color: #f2f2f2;
 }
 
+.schedule th:not(:first-child),
+.schedule td:not(:first-child) {
+    min-width: 120px; /* Задайте желаемую минимальную ширину для столбцов с днями недели */
+}
+
+
 .schedule-row td {
     height: 40px;
 }
@@ -280,6 +286,7 @@ form {
     margin-top: 20px;
     height: 50px;
 }
+
 
 input[type="submit"] {
     font-size: 20px;

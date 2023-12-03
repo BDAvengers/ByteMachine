@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Страница банка</h1>
-    
+     
     <form action="vender/save_transaction.php" method="post">
         <input type="hidden" id="status" name="status" value="Оплачен"> 
         <input type="hidden" id="client_id" name="client_id" value="<?php echo $_SESSION['client_id']; ?>">

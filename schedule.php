@@ -22,15 +22,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
+    <link rel="stylesheet" href="css/message.css">
     <link rel="stylesheet" href="css/schedule.css">
+    <link rel="website icon" type="png" href="images/logo_2.png">
 </head>
 <body>
     <div class="wrap"> 
         <div class="container">
-
-        <?php require 'blocks/header.php'?>
-
+            <?php require 'blocks/header.php'?>
         </div>
+        
         <div class="schedule">
             <?php if (isset($_SESSION['message'])) : ?>
                 <p class="msg"> <?php echo $_SESSION['message']; ?> </p>
@@ -77,17 +78,17 @@
                         </tr>
                     <?php endfor; ?>
                     </tbody>
-                </table>
+                </table> 
             <?php endif; ?>
 
             <?php if (isset($_SESSION['clients'])): ?>
-                <form action="vender/buy_course.php" method="post"> 
-                    <input type="hidden" id="client_id" name="client_id" value="<?php echo $_SESSION['client_id']; ?>">
-                    <input type="hidden" id="date_pay" name="date_pay">
-                    <input type="hidden" id="group_id" name="group_id" value="<?php echo $_GET['group_id']; ?>">   
-                    <input type="submit" value="Купить этот курс">                
-                </form>     
-            <?php endif; ?>   
+                <form action="vender/check_availability.php" method="post"> 
+                    <input type="hidden" name="group_id" value="<?php echo $_GET['group_id']; ?>">
+                    <input type="submit" value="Перейти к оплате">
+                </form>
+            <?php endif; ?>
+ 
+
         </div>
         <?php require "blocks/footer.php" ?>
     </div>

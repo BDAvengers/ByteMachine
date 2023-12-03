@@ -11,73 +11,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up for employees</title>
-    
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/message.css">
+    <link rel="stylesheet" href="css/sign-up.css">
+    <link rel="website icon" type="png" href="images/logo_2.png">
 </head> 
 <body> 
-<div class="wrap">
-        <div class="container">
-            <header class="header">
-            <a href="index.php" class="logo">
-                <img src="images/logo_2.png" alt="" />
-            </a>
-            <ul class="nav">
-                <li class="nav_item3">
-                <a href="index.php" class="nav_item_link">Главная</a>
-                </li>
-                <li class="nav_item">
-                <a href="about-us.php" class="nav_item_link">О нас</a>
-                </li>
-                <li class="nav_item">
-                <a href="course.php" class="nav_item_link">Курсы</a>
-                </li>
-                <li class="nav_item">
-                <a href="comand.php" class="nav_item_link">Команда</a>
-                </li>
-                <li class="nav_item2">
-                    <a href="sign-in.php" class="nav_item_link2">Войти</a>
-                </li>
-                <li class="nav_item2">
-                    <a href="sign-up.php" class="nav_item_link2">Регистрация</a>
-                </li>
-            </ul>
-            </header>
+    <div class="wrap">
+        <div class="container"> 
+            <?php require 'blocks/header.php' ?>
         </div>
-    </div> 
-    <div class="forma">
-        <form class="sign" action="vender/signup_for_emp.php" method="post">
-            <h1 class="h3 mb-3 fw-normal">Регистрация для сотрудников</h1>
-            <label for="">ФИО</label>
-            <input type="text" name="full_name" id="full_name" placeholder="Введите свое полное имя">
+        <div class="section">
+            <section>
+                <form class="sign" action="vender/signup_for_emp.php" method="post">
+                    <h1 class="h3 mb-3 fw-normal">Регистрация для преподавателей</h1>
+                    <div class="justify">
+                    <?php
+                    if (isset($_SESSION['message'])) {
+                        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+                        unset($_SESSION['message']);
+                    }
+                    ?>  
+                    <div class="inputbox">
+                        <div>
+                            <label for="">ФИО</label>
+                        </div>
 
-            <label for="date_birth">Дата рождения:</label>
-            <input type="date" id="date_birth" name="date_birth">
+                        <input type="text" name="full_name" id="full_name" placeholder="Введите свое полное имя" value="<?php echo $_SESSION['form_data']['full_name'] ?? ''; unset($_SESSION['form_data']['full_name']); ?>">
+                    </div>
+                    <div class="inputbox">
+                        <div>
+                            <label for="date_birth">Дата рождения:</label>
+                        </div>    
+                        <input type="date" id="date_birth" name="date_birth" value="<?php echo $_SESSION['form_data']['date_birth'] ?? ''; unset($_SESSION['form_data']['date_birth']); ?>">
+                    </div>
+                    <div class="inputbox">
+                        <div>
+                            <label for="">Номер телефона</label>
+                        </div>
+                        <input type="text" name="phone_number" id="phone_number" placeholder="Введите номер телефона" value="<?php echo $_SESSION['form_data']['phone_number'] ?? ''; unset($_SESSION['form_data']['phone_number']); ?>">
+                    </div>
+                    <div class="inputbox">
+                        <div>
+                            <label for="">Адрес электронный почты</label>
+                        </div> 
+                        <input type="email" name="email" id="email" placeholder="Введите свой адрес электронной почты" value="<?php echo $_SESSION['form_data']['email'] ?? ''; unset($_SESSION['form_data']['email']); ?>">
+                    </div>
+                    <div class="inputbox">
+                        <div>
+                            <label for="">Пароль</label>
+                        </div>
+                        <input type="password" name="password" placeholder="Пароль" autocomplete="new-password">
+                    </div>
+                    <div class="inputbox">
+                        <div>
+                            <label for="">Подтверждение пароля</label>
+                        </div>
+                        <input type="password" name="password_confirm" placeholder="Подтвердите пароль" autocomplete="new-password">
+                    </div>
+                    <button type="submit">Зарегистрироваться</button>
+                    </div>
 
-            <input type="hidden" id="date_hire" name="date_hire"> 
-
-            <label for="">Адрес электронный почты</label>
-            <input type="email" name="email" id="email" placeholder="Введите свой адрес электронной почты">
-
-            <label for="">Номер телефона</label>
-            <input type="text" name="phone_number" id="phone_number" placeholder="Введите номер телефона">
-
-            <label for="">Пароль</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Пароль">
-
-            <label for="">Подтверждение пароля</label>
-            <input type="password" name="password_confirm" class="form-control" id="password" placeholder="Подтвердите пароль">
-
-            <button class="btn btn-primary w-100 py-2" type="submit">Зарегистрироваться</button>
-
-            <p class="upper">Если у вас есть аккаунт, пожалуйста, <a class="text-decoration-none" href="sign-in.php">войдите</a></p>
-            <?php
-                if (isset($_SESSION['message'])) {
-                    echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-                    unset($_SESSION['message']);
-                }
-            ?>
-        </form>
+                    <div class="register">
+                        <p>Если у вас есть аккаунт, пожалуйста, <a href="sign-in.php">войдите</a></p>
+                    </div>
+                
+                </form>
+            </section> 
+        </div>
+        <?php require "blocks/footer.php" ?>
     </div>
 </body>
 </html>

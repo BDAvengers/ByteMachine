@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comand</title>
-<link rel="stylesheet" href="css/command.css">
+    <link rel="stylesheet" href="css/command.css">
+    <link rel="website icon" type="png" href="images/logo_2.png">
 </head>
 <body>
 <div class="wrap"> 
@@ -24,7 +25,7 @@
                 <img class="teacher_img" src="images/2 учитель.png" alt="" />
               </div>
               <div class="team_card_right">
-                <p class="teacher_name">Абдилдаева Асель</p>
+                <p class="teacher_name">Абдурахманов Нуркен</p>
                 <div class="teacher_skill">
                   <p class="teacher_skill_offer">Должность:</p>
                   <p class="teacher_skill_text">Директор</p>
@@ -44,10 +45,10 @@
             </div>
             <div class="team_card">
               <div class="team_card_left">
-                <img class="teacher_img" src="images/Frame 1.png" alt="" />
+                <img class="teacher_img" src="" alt="" />
               </div>
               <div class="team_card_right">
-                <p class="teacher_name">Мэлс Женис</p>
+                <p class="teacher_name">Канатов Алихан</p>
                 <div class="teacher_skill">
                   <p class="teacher_skill_offer">Должность:</p>
                   <p class="teacher_skill_text">Преподаватель</p>
@@ -80,10 +81,10 @@
           <div class="team_cards">
             <div class="team_card">
               <div class="team_card_left">
-                <img class="teacher_img" src="images/4 учитель.png" alt="" />
+                <img class="teacher_img" src="" alt="" />
               </div>
               <div class="team_card_right">
-                <p class="teacher_name">Марденов Ерик</p>
+                <p class="teacher_name">Нуртуган Галымжан</p>
                 <div class="teacher_skill">
                   <p class="teacher_skill_offer">Должность:</p>
                   <p class="teacher_skill_text">Преподаватель</p>
@@ -111,10 +112,10 @@
             </div>
             <div class="team_card">
               <div class="team_card_left">
-                <img class="teacher_img" src="images/3 учитель.png" alt="" />
+                <img class="teacher_img" src="" alt="" />
               </div>
               <div class="team_card_right">
-                <p class="teacher_name">Курманбаев Азамат</p>
+                <p class="teacher_name">Кайрош Турарбек</p>
                 <div class="teacher_skill">
                   <p class="teacher_skill_offer">Должность:</p>
                   <p class="teacher_skill_text">Преподаватель</p>

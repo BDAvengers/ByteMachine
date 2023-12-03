@@ -1,57 +1,67 @@
-<?php 
-    session_start();
-    $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_STRING);
-    $password = filter_var(trim($_POST['password'] ?? ''), FILTER_SANITIZE_STRING);
- 
-    if (empty($email) || empty($password)) {
-        $_SESSION['message'] = "Пожалуйста, введите email и пароль";
-        header('Location: ../sign-in.php');
-        exit(); 
-    }
+<?php
+session_start();
 
-    require 'connect.php';  
+$email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_STRING);
+$password = filter_var(trim($_POST['password'] ?? ''), FILTER_SANITIZE_STRING);
+$remember_me = isset($_POST['remember_me']) ? true : false; // Проверка, установлен ли флажок "Запомнить меня"
 
-    $password = md5($password."jfgdhds2345");
-
-    $statement = $connect->prepare("SELECT * FROM employees WHERE email = :email AND password = :password");
-    $statement->bindParam(':email', $email);
-    $statement->bindParam(':password', $password);
-    $statement->execute();
-    $employees = $statement->fetch(PDO::FETCH_ASSOC);
-
-    if ($employees) {
-        $_SESSION['employees'] = [
-            "emp_id" => $employees['emp_id'], 
-            "full_name" => $employees['full_name'],
-            "email" => $employees['email'],
-            "phone_number" => $employees['phone_number'],
-            "date_birth" => $employees['date_birth']
-        ];
-        $_SESSION['emp_id'] = $employees['emp_id'];
-        header('Location: ../index.php');
-        exit();
-    } 
-    
-    $statement = $connect->prepare("SELECT * FROM clients WHERE email = :email AND password = :password");
-    $statement->bindParam(':email', $email);
-    $statement->bindParam(':password', $password);
-    $statement->execute();
-    $clients = $statement->fetch(PDO::FETCH_ASSOC);
-
-    if ($clients) {
-        $_SESSION['clients'] = [
-            "client_id" => $clients['client_id'], 
-            "full_name" => $clients['full_name'],
-            "email" => $clients['email'],
-            "phone_number" => $clients['phone_number'],
-            "date_birth" => $clients['date_birth']
-        ];
-        $_SESSION['client_id'] = $clients['client_id'];
-        header('Location: ../index.php');
-        exit();
-    } 
-
-    $_SESSION['message'] = "Неверный email или пароль";
+if (empty($email) || empty($password)) {
+    $_SESSION['message'] = "Пожалуйста, введите email и пароль";
     header('Location: ../sign-in.php');
     exit();
+}
+
+require 'connect.php';
+
+$statement = $connect->prepare("SELECT * FROM employees WHERE email = :email");
+$statement->bindParam(':email', $email);
+$statement->execute();
+$employee = $statement->fetch(PDO::FETCH_ASSOC);
+
+if ($employee && password_verify($password, $employee['password'])) {
+    $_SESSION['employees'] = [
+        "emp_id" => $employee['emp_id'],
+        "full_name" => $employee['full_name'],
+        "email" => $employee['email'],
+        "phone_number" => $employee['phone_number'],
+        "date_birth" => $employee['date_birth']
+    ];
+    $_SESSION['emp_id'] = $employee['emp_id'];
+
+    // Если установлен флажок "Запомнить меня", устанавливаем cookie
+    if ($remember_me) {
+        setcookie('user_email', $email, time() + 30 * 24 * 60 * 60, '/');
+    }
+
+    header('Location: ../index.php');
+    exit();
+}
+
+$statement = $connect->prepare("SELECT * FROM clients WHERE email = :email");
+$statement->bindParam(':email', $email);
+$statement->execute();
+$client = $statement->fetch(PDO::FETCH_ASSOC);
+
+if ($client && password_verify($password, $client['password'])) {
+    $_SESSION['clients'] = [
+        "client_id" => $client['client_id'],
+        "full_name" => $client['full_name'],
+        "email" => $client['email'],
+        "phone_number" => $client['phone_number'],
+        "date_birth" => $client['date_birth']
+    ];
+    $_SESSION['client_id'] = $client['client_id'];
+
+    // Если установлен флажок "Запомнить меня", устанавливаем cookie
+    if ($remember_me) {
+        setcookie('user_email', $email, time() + 30 * 24 * 60 * 60, '/');
+    }
+
+    header('Location: ../index.php');
+    exit();
+}
+
+$_SESSION['message'] = "Неверный email или пароль";
+header('Location: ../sign-in.php');
+exit();
 ?>
