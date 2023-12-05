@@ -1,0 +1,38 @@
+.test {
+    display: flex;
+    flex-direction: column;
+}
+
+.add {
+    padding-top: 25px;
+    padding-left: 42px;
+    position: relative;
+    display: inline-block;
+}
+
+.add_group {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px; 
+    color: #000000;
+}
+
+.drop_group {
+    background-color: aliceblue;
+    padding: 10px 20px;
+    box-shadow: 0 5px 10px rgb(255, 255, 255);
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.729);
+    width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
+
+.drop_group.show {
+    z-index: 99;
+    visibility: visible;
+    opacity: 1;
+}

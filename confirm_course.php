@@ -31,7 +31,6 @@
             <h2>Цена этого курса: <?php echo $data['group_price']; ?> тг</h2>
         <?php endif; ?>
     <?php endforeach; ?>
-    
 
     <form action="vender/buy_course.php" method="post"> 
         <input type="hidden" id="client_id" name="client_id">

@@ -11,7 +11,7 @@
               <a href="">+7 747 908 51 29</a>
             </li>
             <li class="footer__nav__item">
-              <a href="">techno.house.almaty@gmail.com</a>
+              <a href="">ByteMachine@gmail.com</a>
             </li>
             <li class="footer__nav__item">
               <a href="">

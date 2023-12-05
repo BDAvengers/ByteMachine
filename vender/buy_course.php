@@ -49,29 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':client_id', $client_id);
         $stmt->bindParam(':date_pay', $date_pay);
         $stmt->bindParam(':group_id', $group_id);
+        $stmt->execute();
 
-        if ($stmt->execute()) {
-            $stmt2 = $connect->prepare("SELECT date_pay FROM trans WHERE client_id = :client_id AND group_id = :group_id");
-            $stmt2->bindParam(':client_id', $client_id);
-            $stmt2->bindParam(':group_id', $group_id);
-            $stmt2->execute();
-            $date_pay_client = $stmt2->fetchColumn();
-
-            // Добавляем 1 минуту к $date_pay_client
-            $date_pay_client_modified = new DateTime($date_pay_client, $timezone);
-            $date_pay_client_modified->modify('+1 minute');
-            
-            if ($date_pay >= $date_pay_client_modified) {
-                // Через минуту обновляем статус на "Не оплачен"
-                $stmt_update = $connect->prepare("UPDATE trans SET status = 'Не оплачен' WHERE client_id = :client_id AND group_id = :group_id");
-                $stmt_update->bindParam(':client_id', $client_id);
-                $stmt_update->bindParam(':group_id', $group_id);
-                $stmt_update->execute();
-            }
-
-            header("Location: https://kaspi.kz/pay/_gate?action=service_with_subservice&service_id=3025&subservice_id=20217&region_id=18");
-            exit();
-        }
+        header("Location: https://kaspi.kz/pay/_gate?action=service_with_subservice&service_id=3025&subservice_id=20217&region_id=18");
+        exit();
     }
 }
 ?>
