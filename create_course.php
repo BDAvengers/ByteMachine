@@ -45,7 +45,7 @@
 
             <label for="duration">Продолжительность курса (в месяцах):</label>
             <input type="text" id="duration" name="duration" value="<?php echo $_SESSION['form_data']['duration'] ?? ''; unset($_SESSION['form_data']['duration']); ?>">
-            
+             
             
                     <label for="ind_group">Индивидуальное занятие:</label>
                     <input type="text" id="ind_group" name="ind_group" value="<?php echo $_SESSION['form_data']['ind_group'] ?? ''; unset($_SESSION['form_data']['ind_group']); ?>">

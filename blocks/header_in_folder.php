@@ -20,14 +20,14 @@
             <div class="user-box" id="user-box">
                 <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
                     <div class="dropdown" onclick="toggleDropdown()">
-                        <a href="#" class="dropdown-toggle">
+                        <a href="javascript:void(0);" class="dropdown-toggle">
                                 <?php 
                                     if (isset($_SESSION['clients'])) {
                                         echo $_SESSION['clients']['full_name'];
                                     } else {
                                         echo $_SESSION['employees']['full_name'];
                                     }
-                                ?>
+                                ?> 
                         </a>
                         <div id="dropdown" class="dropdown-menu">
                             <a href="../profile/profile.php" class="dropdown-link">Профиль</a>

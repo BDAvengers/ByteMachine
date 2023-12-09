@@ -53,6 +53,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои курсы</title>
     <link rel="stylesheet" href="../css/course.css">
+    <link rel="stylesheet" href="../css/message.css">
 </head> 
 <body>
     
@@ -60,7 +61,12 @@
         <div class="container">
             <?php require "../blocks/header_in_folder.php" ?>
         </div>
+            
         <p class="couses_children">Мои курсы</p> 
+            <?php if (isset($_SESSION['message'])) : ?>
+                <p class="msg"> <?php echo $_SESSION['message']; ?> </p>
+                <?php unset($_SESSION['message']); ?>
+            <?php endif; ?>
 
             <?php if (isset($_SESSION['clients'])): ?> 
                 <div class="create_course">

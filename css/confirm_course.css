@@ -248,27 +248,20 @@ footer::before {
   z-index: -1;
 }
 
-.newcourse {
-  max-width: 500px;
-  margin: 0 auto;
+.confirm_box {
+  padding-top: 50px;
+  color: #f2f6ff;
+  text-align: center;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-input[type="text"],
-[type="numeric"],
-[type="date"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  box-sizing: border-box;
+h1 {
+  text-align: center;
+  color: rgb(0, 255, 51);
+  padding-bottom: 20px;
 }
 
 input[type="submit"] {
+  max-width: 250px;
   font-size: 20px;
   width: 100%;
   background-color: #4caf50;
@@ -281,17 +274,4 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #45a049;
-}
-
-.submit {
-  padding-top: 15px;
-}
-
-.newcourse {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
 }

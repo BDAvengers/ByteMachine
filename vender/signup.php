@@ -146,7 +146,6 @@
     $statement->bindParam(':password', $password_hash);
     $statement->execute();
 
-
     $_SESSION['message'] = 'Регистрация прошла успешно!';
     header('Location: ../sign-in.php');
     exit();

@@ -42,13 +42,6 @@ body {
   margin: 0 auto;
 }
 
-.container2 {
-  width: 100%;
-  margin: 0 auto;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
 .container_2 {
   display: flex;
   width: 100%;
@@ -248,50 +241,44 @@ footer::before {
   z-index: -1;
 }
 
-.newcourse {
-  max-width: 500px;
-  margin: 0 auto;
+.container2 {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
+.left_box {
+  padding-right: 20px;
 }
 
-input[type="text"],
-[type="numeric"],
-[type="date"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  box-sizing: border-box;
-}
-
-input[type="submit"] {
-  font-size: 20px;
-  width: 100%;
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-.submit {
-  padding-top: 15px;
-}
-
-.newcourse {
-  max-width: 500px;
-  margin: 50px auto;
+.left_container {
+  width: 300px;
+  background-color: #333;
+  color: #fff;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  border-radius: 12px;
+}
+
+.left_container a {
+  color: #f2f6ff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.left_container a:hover {
+  color: #007bff; /* Цвет текста при наведении */
+  border-bottom: 1px solid #007bff; /* Линия снизу при наведении */
+}
+
+.right_container {
+  width: 700px;
+  background-color: #fff; /* Цвет фона правого контейнера */
+  color: #333; /* Цвет текста в правом контейнере */
+  padding: 20px; /* Отступ внутри правого контейнера */
+  border-radius: 12px;
+}
+
+.right_box h2 {
+  color: #ffffffbc;
 }

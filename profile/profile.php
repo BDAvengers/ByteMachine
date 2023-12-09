@@ -27,7 +27,7 @@
             <div class="left_box"> 
                 <div class="left_container">
                     <p><a href="../profile/my_courses.php">Мои курсы</a></p>
-                    <p><a href="">Редактировать профиль</a></p>
+                    <p><a href="settings.php">Редактировать профиль</a></p>
                 </div>
             </div>
             <div class="right_box">

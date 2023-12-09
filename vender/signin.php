@@ -3,7 +3,6 @@ session_start();
 
 $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password'] ?? ''), FILTER_SANITIZE_STRING);
-$remember_me = isset($_POST['remember_me']) ? true : false; // Проверка, установлен ли флажок "Запомнить меня"
 
 if (empty($email) || empty($password)) {
     $_SESSION['message'] = "Пожалуйста, введите email и пароль";
@@ -27,12 +26,6 @@ if ($employee && password_verify($password, $employee['password'])) {
         "date_birth" => $employee['date_birth']
     ];
     $_SESSION['emp_id'] = $employee['emp_id'];
-
-    // Если установлен флажок "Запомнить меня", устанавливаем cookie
-    if ($remember_me) {
-        setcookie('user_email', $email, time() + 30 * 24 * 60 * 60, '/');
-    }
-
     header('Location: ../index.php');
     exit();
 }
@@ -51,15 +44,9 @@ if ($client && password_verify($password, $client['password'])) {
         "date_birth" => $client['date_birth']
     ];
     $_SESSION['client_id'] = $client['client_id'];
-
-    // Если установлен флажок "Запомнить меня", устанавливаем cookie
-    if ($remember_me) {
-        setcookie('user_email', $email, time() + 30 * 24 * 60 * 60, '/');
-    }
-
     header('Location: ../index.php');
     exit();
-}
+} 
 
 $_SESSION['message'] = "Неверный email или пароль";
 header('Location: ../sign-in.php');

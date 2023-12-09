@@ -15,7 +15,7 @@
                 <li class="nav_item">
                 <a href="command.php" class="nav_item_link">Команда</a>
                 </li>
-            </ul> 
+            </ul>  
         </header>
             <div class="user-box" id="user-box">
                 <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
