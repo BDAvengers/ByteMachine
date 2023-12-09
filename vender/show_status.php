@@ -13,7 +13,7 @@
         $status = $statment->fetchColumn();
 
         if ($status == 'Забронирован') {
-            $_SESSION['message'] = "Вы все еше не купили курс. Если вы оплатили, пожалуйста, подождите. Оплата поступает в течение 30 секунд";
+            $_SESSION['message'] = "Вы все еше не купили курс. Если вы оплатили, пожалуйста, подождите. Оплата поступает в течение минуты";
             header("Location: ../confirm_course.php?group_id=$group_id");
             exit();
         } else if ($status == 'Не оплачен') {

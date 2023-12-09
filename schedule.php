@@ -84,7 +84,7 @@
             <?php if (isset($_SESSION['clients'])): ?>
                 <form action="vender/check_availability.php" method="post"> 
                     <input type="hidden" name="group_id" value="<?php echo $_GET['group_id']; ?>">
-                    <input type="submit" value="Перейти к оплате">
+                    <input type="submit" value="Купить этот курс">
                 </form>
             <?php endif; ?>
  

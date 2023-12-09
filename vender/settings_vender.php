@@ -16,15 +16,15 @@
                 $phone_number_pattern2 = '/^\+77\d{9}$/';
     
                 if (empty($full_name) || empty($phone_number) || empty($date_birth)) {
-                    $_SESSION['message'] = 'Пожалуйста, заполните полностью';
+                    $_SESSION['edit_profile_message'] = 'Пожалуйста, заполните полностью';
                     header('Location: ../profile/settings.php');
                     exit();
                 } else if (mb_strlen($full_name) < 4 || mb_strlen($full_name) > 50) {
-                    $_SESSION['message'] = "Недопустимая ФИО";
+                    $_SESSION['edit_profile_message'] = "Недопустимая ФИО";
                     header('Location: ../profile/settings.php');
                     exit();
                 } else if (!preg_match($phone_number_pattern, $phone_number) && !preg_match($phone_number_pattern2, $phone_number)) {
-                    $_SESSION['message'] = "Введите номер телефона в формате 87776665544 или +77776665544";
+                    $_SESSION['edit_profile_message'] = "Введите номер телефона в формате 87776665544 или +77776665544";
                     header('Location: ../profile/settings.php');
                     exit();
                 }
@@ -55,7 +55,7 @@
                     $_SESSION['employees']['date_birth'] = $date_birth;
                 }
 
-                $_SESSION['message'] = "Успешно сохранено!";
+                $_SESSION['edit_profile_message'] = "Успешно сохранено!";
                 header("Location: ../profile/settings.php");
                 exit();
 
@@ -75,20 +75,20 @@
                         $check_password = $statment->fetch(PDO::FETCH_ASSOC);
                 
                         if (empty($password) || empty($new_password) || empty($confirm_password)) {
-                            $_SESSION['message'] = "Пожалуйста, заполните пароли!";
+                            $_SESSION['change_password_message'] = "Пожалуйста, заполните пароли!";
                             header("Location: ../profile/settings.php");
                             exit();
                         } else if ($new_password !== $confirm_password) {
-                            $_SESSION['message'] = "Пароли не совпадают! Пожалуйста, заполните еще раз.";
+                            $_SESSION['change_password_message'] = "Пароли не совпадают! Пожалуйста, заполните еще раз.";
                             header("Location: ../profile/settings.php");
                             exit();
                         } else if ($password === $new_password && $password === $confirm_password) {
-                            $_SESSION['message'] = "Новый пароль не должен совпадать с текущим паролем";
+                            $_SESSION['change_password_message'] = "Новый пароль не должен совпадать с текущим паролем";
                             header("Location: ../profile/settings.php");
                             exit();
                         }
                 
-                        $password_hash = password_hash($new_password, PASSWORD_BCRYPT);
+                        $password_hash = password_hash($new_password, PASSWORD_BCRYPT); 
                 
                         if (password_verify($password, $check_password['password'])) {
                             $stmt = $connect->prepare("UPDATE clients SET password = :new_password WHERE client_id = :client_id");
@@ -96,16 +96,16 @@
                             $stmt->bindparam(':new_password', $password_hash);
                             $stmt->execute();
                 
-                            $_SESSION['message'] = "Пароль успешно сохранен!";
+                            $_SESSION['change_password_message'] = "Пароль успешно сохранен!";
                             header("Location: ../profile/settings.php");
                             exit();
                         } else {
-                            $_SESSION['message'] = "Неверный текущий пароль! Пожалуйста, заполните еще раз.";
+                            $_SESSION['change_password_message'] = "Неверный текущий пароль! Пожалуйста, заполните еще раз.";
                             header("Location: ../profile/settings.php");
                             exit();
                         }
                     }
-                    break;
+                break;
         }    
     }
 ?>

@@ -27,13 +27,12 @@
         <div class="container2">
             <div class="left_box"> 
                 <div class="left_container">
-                    <p><a href="">Редактировать профиль</a></p>
-                    <p><a href="">Изменить пароль</a></p>
-                    <p><a href="">Изменить образование</a></p>
+                    <p><a href="#" onclick="showForm('editProfileForm')">Редактировать профиль</a></p>
+                    <p><a href="#" onclick="showForm('changePasswordForm')">Изменить пароль</a></p>
                 </div>
             </div>
             <div class="right_box">
-                <div class="right_container">
+                <div class="right_container" id="editProfileForm">
                     <form class="prof" action="../vender/settings_vender.php" method="post">
                         <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
                             <h1>Редактирование профиля</h1>
@@ -44,12 +43,12 @@
                             <input type="submit" value="Сохранить">
                         <?php } ?>
                     </form>
-                    <?php if (isset($_SESSION['message'])) : ?>
-                        <p class="msg"> <?php echo $_SESSION['message']; ?> </p>
-                        <?php unset($_SESSION['message']); ?>
+                    <?php if (isset($_SESSION['edit_profile_message'])) : ?>
+                        <p class="msg"> <?php echo $_SESSION['edit_profile_message']; ?> </p>
+                        <?php unset($_SESSION['edit_profile_message']); ?>
                     <?php endif; ?>
                 </div>
-                <div class="right_container">
+                <div class="right_container" id="changePasswordForm" style="display: none;">
                     <form class="prof" action="../vender/settings_vender.php" method="post">
                         <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>
                             <h1>Изменить пароль</h1>
@@ -60,9 +59,9 @@
                             <input type="submit" value="Сохранить">
                         <?php } ?>
                     </form>
-                    <?php if (isset($_SESSION['message'])) : ?>
-                        <p class="msg"> <?php echo $_SESSION['message']; ?> </p>
-                        <?php unset($_SESSION['message']); ?>
+                    <?php if (isset($_SESSION['change_password_message'])) : ?>
+                        <p class="msg"> <?php echo $_SESSION['change_password_message']; ?> </p>
+                        <?php unset($_SESSION['change_password_message']); ?>
                     <?php endif; ?>
                 </div>
             </div>
@@ -70,5 +69,15 @@
         <?php require "../blocks/footer_in_folder.php" ?>
     </div>
     <script src="../js/dropdown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function showForm(formId) {
+            // Скрыть все формы
+            $('.right_container').hide();
+
+            // Показать только выбранную форму
+            $('#' + formId).show();
+        }
+    </script>
 </body>
 </html>
