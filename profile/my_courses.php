@@ -54,6 +54,7 @@
     <title>Мои курсы</title>
     <link rel="stylesheet" href="../css/course.css">
     <link rel="stylesheet" href="../css/message.css">
+    <link rel="website icon" type="png" href="../images/logo_2.png">
 </head> 
 <body>
     

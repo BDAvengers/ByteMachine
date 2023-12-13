@@ -259,6 +259,12 @@ footer::before {
   border-radius: 12px;
 }
 
+.left_container a.active {
+  color: #007bff;
+  border-bottom: 1px solid #007bff;
+  font-size: 20px;
+}
+
 .left_container a {
   color: #f2f6ff;
   text-decoration: none;

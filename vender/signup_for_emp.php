@@ -1,6 +1,12 @@
 <?php
     session_start();
-    
+    require 'connect.php';
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require '../vendor/autoload.php';
+
     function saveFormData($data)
     {
         $_SESSION['form_data'] = $data;
@@ -13,6 +19,42 @@
         unset($_SESSION['form_data']); // Очистим сохраненные данные после использования
         return $formData;
     }
+
+    function sendemail_verify($full_name, $email, $verify_token)
+{
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Username = 'alixan698@gmail.com'; 
+    $mail->Password = 'huwx wcuq fodk upct';
+
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587; 
+        
+    $mail->setFrom("alixan698@gmail.com", $full_name);
+    $mail->addAddress($email);
+    
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';
+    $mail->Subject = 'Подтверждение почты на ByteMachine.kz';
+    
+    $email_template = "
+    <h2>Вы должны подтвердить почту, чтобы войти в аккаунт</h2>
+    <h5>Подтвердите свою почту, нажав на ссылку 'Подтвердить почту'</h5>
+    <br/><br/>
+    <a href='http://localhost/ByteMachine/vender/verify-email.php?token=$verify_token'>Подтвердить почту</a>";
+    
+    $mail->Body = $email_template;
+    
+    try {
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+        error_log("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
+    }
+}
 
     $full_name = filter_var(trim($_POST['full_name'] ?? ''), FILTER_SANITIZE_STRING);
     $date_birth = filter_var(trim($_POST['date_birth'] ?? ''), FILTER_SANITIZE_STRING);
@@ -93,8 +135,7 @@
         header('Location: ../sign-up_for_emp.php');
         exit();
     }
-
-    require 'connect.php';
+    
     $check_statement = $connect->prepare("SELECT * FROM clients WHERE email = :email");
     $check_statement->bindParam(':email', $email);
     $check_statement->execute();
@@ -135,20 +176,23 @@
 
     unset($_SESSION['form_data']);
  
+    $verify_token = md5(rand());
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-    $statement = $connect->prepare("INSERT INTO employees (full_name, date_birth, email, phone_number, password, date_hire) 
-    VALUES (:full_name, :date_birth, :email, :phone_number, :password, :date_hire)");
-
+    $statement = $connect->prepare("INSERT INTO employees (full_name, date_birth, email, phone_number, password, date_hire, verify_token, status) 
+    VALUES (:full_name, :date_birth, :email, :phone_number, :password, :date_hire, :verify_token, 0)");
     $statement->bindParam(':full_name', $full_name);
     $statement->bindParam(':date_birth', $date_birth);
     $statement->bindParam(':email', $email);
     $statement->bindParam(':phone_number', $phone_number);
     $statement->bindParam(':password', $password_hash);
     $statement->bindParam(':date_hire', $date_hire);
-    $statement->execute();
-
-    $_SESSION['message'] = 'Регистрация прошла успешно!';
-    header('Location: ../sign-in.php');
-    exit();
+    $statement->bindParam(':verify_token', $verify_token);
+    
+    if ($statement->execute()) {
+        sendemail_verify($full_name, $email, $verify_token);
+        $_SESSION['message'] = 'Регистрация прошла успешно! Пожалуйста, подтвердите свою электронную почту.';
+        header('Location: ../sign-in.php');
+        exit();
+    }
 ?>

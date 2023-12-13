@@ -12,17 +12,22 @@ if (empty($email) || empty($password)) {
 
 require 'connect.php';
 
+
 $statement = $connect->prepare("SELECT * FROM employees WHERE email = :email");
 $statement->bindParam(':email', $email);
 $statement->execute();
 $employee = $statement->fetch(PDO::FETCH_ASSOC);
 
-if ($employee && password_verify($password, $employee['password'])) {
+if ($employee['status'] !== 1 && $employee && password_verify($password, $employee['password'])) {
+    $_SESSION['message'] = "Пожалуйста, подтвердите почту";
+    header('Location: ../sign-in.php');
+    exit();
+} else if ($employee['status'] == 1 && $employee && password_verify($password, $employee['password'])) {
     $_SESSION['employees'] = [
         "emp_id" => $employee['emp_id'],
         "full_name" => $employee['full_name'],
         "email" => $employee['email'],
-        "phone_number" => $employee['phone_number'],
+        "phone_number" => $employee['phone_number'], 
         "date_birth" => $employee['date_birth']
     ];
     $_SESSION['emp_id'] = $employee['emp_id'];
@@ -35,7 +40,12 @@ $statement->bindParam(':email', $email);
 $statement->execute();
 $client = $statement->fetch(PDO::FETCH_ASSOC);
 
-if ($client && password_verify($password, $client['password'])) {
+if ($client['status'] !== 1 && $client && password_verify($password, $client['password'])) {
+    $_SESSION['message'] = "Пожалуйста, подтвердите почту";
+    header('Location: ../sign-in.php');
+    exit();
+
+} else if ($client['status'] == 1 && $client && password_verify($password, $client['password'])) {
     $_SESSION['clients'] = [
         "client_id" => $client['client_id'],
         "full_name" => $client['full_name'],

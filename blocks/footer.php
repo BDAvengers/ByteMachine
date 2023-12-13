@@ -4,7 +4,7 @@
           <a href="index.php">
             <img src="images/logo_2.png" alt="" />
           </a>
-        </div>
+        </div> 
         <div class="footer__nav">
           <ul>
             <li class="footer__nav__item">
@@ -24,7 +24,7 @@
         <div class="footer__social">
           <div class="social__item">
           <a href="https://www.instagram.com/techno.house.almaty/" target="_blank">
-              <img src="../images/pngaaa 1.png" alt="" />
+              <img src="../images/pngaaa 1.png">
           </a>
           </div>
         </div>

@@ -18,6 +18,7 @@
     <title>Настройка</title>
     <link rel="stylesheet" href="../css/settings.css">
     <link rel="stylesheet" href="../css/message.css">
+    <link rel="website icon" type="png" href="../images/logo_2.png">
 </head> 
 <body> 
     <div class="wrap">
@@ -27,8 +28,8 @@
         <div class="container2">
             <div class="left_box"> 
                 <div class="left_container">
-                    <p><a href="#" onclick="showForm('editProfileForm')">Редактировать профиль</a></p>
-                    <p><a href="#" onclick="showForm('changePasswordForm')">Изменить пароль</a></p>
+                    <p><a href="javascript:void(0);" onclick="showForm('editProfileForm')">Редактировать профиль</a></p>
+                    <p><a href="javascript:void(0);" onclick="showForm('changePasswordForm')">Изменить пароль</a></p>
                 </div>
             </div>
             <div class="right_box">
@@ -71,12 +72,41 @@
     <script src="../js/dropdown.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
+        $(document).ready(function() {
+            // Получить значение последней формы из сессии
+            var lastForm = "<?php echo isset($_SESSION['last_form']) ? $_SESSION['last_form'] : 'editProfileForm'; ?>";
+
+            // Скрыть все формы
+            $('.right_container').hide();
+
+            // Показать только выбранную форму
+            $('#' + lastForm).show();
+
+            // Добавить обработчик события клика на ссылки
+            $('.left_container a').click(function() {
+                // Удалить стиль активности у всех ссылок
+                $('.left_container a').removeClass('active');
+
+                // Добавить стиль активности к текущей ссылке
+                $(this).addClass('active');
+
+                // Сохранить значение последней открытой формы в сессии
+                var formId = $(this).data('form');
+                if (formId) {
+                    $.post('../vender/save_last_form.php', { lastForm: formId });
+                }
+            });
+        });
+
         function showForm(formId) {
             // Скрыть все формы
             $('.right_container').hide();
 
             // Показать только выбранную форму
             $('#' + formId).show();
+
+            // Сохранить значение последней открытой формы в сессии
+            $.post('../vender/save_last_form.php', { lastForm: formId });
         }
     </script>
 </body>

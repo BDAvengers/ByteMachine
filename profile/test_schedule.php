@@ -51,6 +51,7 @@ foreach ($groupData as $group) {
     <title>Добавить расписания</title>
     <link rel="stylesheet" href="../css/create_schedule.css">
     <link rel="stylesheet" href="../css/message.css">
+    <link rel="website icon" type="png" href="../images/logo_2.png">
 </head>
 <body>
 

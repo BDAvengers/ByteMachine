@@ -54,6 +54,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My schedules</title>
     <link rel="stylesheet" href="../css/schedule.css">
+    <link rel="website icon" type="png" href="../images/logo_2.png">
 </head>
 <body>
 

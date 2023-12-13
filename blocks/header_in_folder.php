@@ -37,7 +37,7 @@
                             <?php elseif (isset($_SESSION['employees'])): ?>
                                 <a href="../profile/schedules_for_emp.php" class="dropdown-link">Мои расписания</a>
                             <?php endif; ?>
-                            <a href="#" class="dropdown-link">Настройки</a>
+                            <a href="../profile/settings.php" class="dropdown-link">Настройки</a>
                             <a href="../vender/logout.php" class="dropdown-link">Выход</a>
                         </div>
                     </div>

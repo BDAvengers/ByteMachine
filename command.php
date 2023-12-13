@@ -22,7 +22,7 @@
           <div class="team_cards">
             <div class="team_card">
               <div class="team_card_left">
-                <img class="teacher_img" src="images/2 учитель.png" alt="" />
+                <img class="teacher_img" src="" alt="" />
               </div>
               <div class="team_card_right">
                 <p class="teacher_name">Абдурахманов Нуркен</p>

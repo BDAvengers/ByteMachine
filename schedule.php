@@ -79,7 +79,7 @@
                     <?php endfor; ?>
                     </tbody>
                 </table> 
-            <?php endif; ?>
+            <?php endif; ?> 
 
             <?php if (isset($_SESSION['clients'])): ?>
                 <form action="vender/check_availability.php" method="post"> 

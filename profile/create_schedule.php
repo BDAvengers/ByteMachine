@@ -27,6 +27,7 @@ foreach ($groupData as $group) {
     <title>Create schedule</title>
     <link rel="stylesheet" href="../css/shedule.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="website icon" type="png" href="../images/logo_2.png">
 </head>
 
 <body>
