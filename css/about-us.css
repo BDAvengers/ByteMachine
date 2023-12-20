@@ -333,7 +333,7 @@ footer::before {
 
     .menu {
         position: absolute;
-        left: -350px;
+        left: -400px;
         top: 0;
         width: 350px;
         background-color: blueviolet;
@@ -354,5 +354,25 @@ footer::before {
 
     .header.open .menu{
         transform: translateX(100%);
+    }
+
+    .nav_item2 {
+        display: none;
+    }
+
+    /* Добавляем Вход и Регистрация */
+    .nav_item_login,
+    .nav_item_register {
+        list-style-type: none;
+        margin-right: 20px; /* Можете настроить отступ по вашему усмотрению */
+    }
+
+    .nav_item_login a,
+    .nav_item_register a {
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: #F2F6FF;
     }
 }

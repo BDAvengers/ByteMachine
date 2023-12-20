@@ -19,6 +19,14 @@
                 <li class="nav_item">
                 <a href="command.php" class="nav_item_link">Команда</a>
                 </li>
+
+                <!-- Новые элементы для медиа-запроса -->
+                <li class="nav_item_login">
+                    <a href="sign-in.php" class="nav_item_link">Войти</a>
+                </li>
+                <li class="nav_item_register">
+                    <a href="sign-up.php" class="nav_item_link">Регистрация</a>
+                </li>
             </ul>  
            </div>
         </header>
