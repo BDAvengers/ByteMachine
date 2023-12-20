@@ -335,7 +335,7 @@ footer::before {
         position: absolute;
         left: -400px;
         top: 0;
-        width: 350px;
+        width: 260px;
         background-color: blueviolet;
         padding: 75px 20px 20px 20px;
         transition: transform .5s;
@@ -343,6 +343,7 @@ footer::before {
 
     .nav {
         display: block;
+        padding-left: 150px;
     }
 
     .nav_item_link {
