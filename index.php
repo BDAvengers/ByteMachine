@@ -11,6 +11,8 @@
   <title>ByteMachine</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="website icon" type="png" href="images/logo_2.png">
+
+  <script defer src="js/adaptive_menu.js"></script>
 </head>
 
 <body>
