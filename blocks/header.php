@@ -1,7 +1,11 @@
         <header class="header">
+            <button class="header__burger-btn" id="burger">
+                <span></span><span></span><span></span>
+            </button>
           <a href="index.php" class="logo">
             <img src="images/logo_2.png" alt="" />
           </a>
+          <div class="menu">
             <ul class="nav">
                 <li class="nav_item3">
                 <a href="index.php" class="nav_item_link">Главная</a>
@@ -16,6 +20,7 @@
                 <a href="command.php" class="nav_item_link">Команда</a>
                 </li>
             </ul>  
+           </div>
         </header>
             <div class="user-box" id="user-box">
                 <?php if (isset($_SESSION['clients']) || isset($_SESSION['employees'])) { ?>

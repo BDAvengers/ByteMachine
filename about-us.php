@@ -9,6 +9,8 @@
     <title>О нас</title>
     <link rel="stylesheet" href="css/about-us.css" />
     <link rel="website icon" type="png" href="images/logo_2.png">
+
+    <script defer src="js/adaptive_menu.js"></script>
 </head>
 <body>
 
