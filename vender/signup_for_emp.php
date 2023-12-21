@@ -26,14 +26,14 @@
     $mail->isSMTP();
     $mail->SMTPAuth = true;
 
-    $mail->Host = 'smtp.gmail.com';
-    $mail->Username = 'alixan698@gmail.com'; 
-    $mail->Password = 'huwx wcuq fodk upct';
+    $mail->Host = 'mail.bytemachine.kz';
+    $mail->Username = 'info@bytemachine.kz'; 
+    $mail->Password = 'pajFCbxPCtc3ywB';
 
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587; 
         
-    $mail->setFrom("alixan698@gmail.com", $full_name);
+    $mail->setFrom("info@bytemachine.kz", "Byte Machine");
     $mail->addAddress($email);
     
     $mail->isHTML(true);
@@ -44,7 +44,7 @@
     <h2>Вы должны подтвердить почту, чтобы войти в аккаунт</h2>
     <h5>Подтвердите свою почту, нажав на ссылку 'Подтвердить почту'</h5>
     <br/><br/>
-    <a href='http://localhost/ByteMachine/vender/verify-email.php?token=$verify_token'>Подтвердить почту</a>";
+    <a href='http://bytemachine.kz/vender/verify-email.php?token=$verify_token'>Подтвердить почту</a>";
     
     $mail->Body = $email_template;
     
