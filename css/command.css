@@ -59,6 +59,32 @@ body {
     flex-wrap: wrap;
 }
 
+.header__burger-btn {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.header__burger-btn span {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    left: 5px;
+}
+
+.header__burger-btn span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3) {
+    transform: translateY(10px);
+}
+
 .logo > img {
     height: 100px;
     width: 100px;
@@ -335,4 +361,71 @@ footer::before {
 .team__wrap {
     padding-left: 60px;
     padding-right: 60px;
+}
+
+.nav_item_login,
+.nav_item_register {
+    display: none;
+}
+
+.nav_item_login a,
+.nav_item_register a {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header__burger-btn {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        left: -400px;
+        top: 0;
+        width: 260px;
+        /* background-color: blueviolet; */
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 75px 20px 20px 20px;
+        transition: transform .5s;
+        z-index: 1;
+        border-radius: 30px;
+    }
+
+    .nav {
+        display: block;
+        padding-left: 150px;
+    }
+
+    .nav_item_link {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 21px;
+        display: block;
+        padding: 10px 0px;
+    }
+
+    .header.open .menu{
+        transform: translateX(100%);
+    }
+
+    .nav_item2 {
+        display: none;
+    }
+
+    /* Добавляем Вход и Регистрация */
+    .nav_item_login,
+    .nav_item_register {
+        display: block;
+        list-style-type: none;
+        margin-right: 20px; /* Можете настроить отступ по вашему усмотрению */
+    }
+
+    .nav_item_login a,
+    .nav_item_register a {
+        display: block;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: rgba(0, 0, 0, 0.7);
+    }
 }
